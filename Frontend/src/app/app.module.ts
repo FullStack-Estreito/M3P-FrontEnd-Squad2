@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -16,7 +14,7 @@ import { UsuarioComponent } from './component/usuario/usuario.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { HomeComponent } from './component/home/home.component';
 import { EditComponent } from './component/edit/edit.component';
-
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +23,7 @@ import { EditComponent } from './component/edit/edit.component';
     MenuComponent,
     HomeComponent,
     EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
