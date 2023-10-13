@@ -1,0 +1,19 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="cont">
+  <app-menu></app-menu>
+  <div class="container my-5">
+    <h1>Usuarios</h1>
+    <div class="row d-flex">
+      <div *ngFor="let b of usuarios" class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-3 col p-0">
+          <div class="card-body">
+            <h5 class="card-title">Nome: {{ b.nome }}</h5>
+            <p class="card-text">Tipo: {{ b.tipo }}</p>
+            <p class="card-text">Id: {{ b.id }}</p>
+            <button class="btn btn-primary">detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

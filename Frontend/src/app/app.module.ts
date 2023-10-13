@@ -1,16 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { NgChartsModule } from 'ng2-charts';
+
+import { HighchartsChartModule } from 'highcharts-angular';
+import { ChartModule } from 'angular-highcharts';
+import { UsuarioComponent } from './component/usuario/usuario.component';
+import { MenuComponent } from './component/menu/menu.component';
+import { HomeComponent } from './component/home/home.component';
+import { EditComponent } from './component/edit/edit.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsuarioComponent,
+    MenuComponent,
+    HomeComponent,
+    EditComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule, RouterModule, ReactiveFormsModule, FormsModule, HttpClientModule, NgxMaskDirective,
+    NgxMaskPipe, NgChartsModule, ChartModule, HighchartsChartModule
   ],
-  providers: [],
+
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
