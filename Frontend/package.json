@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "angular-highcharts": "^16.0.0",
     "bootstrap": "^5.3.2",
     "chart-module": "^1.0.0",

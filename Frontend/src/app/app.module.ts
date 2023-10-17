@@ -16,6 +16,8 @@ import { UsuarioComponent } from './component/usuario/usuario.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { HomeComponent } from './component/home/home.component';
 import { EditComponent } from './component/edit/edit.component';
+import { EnderecoComponent } from './component/endereco/endereco.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { EditComponent } from './component/edit/edit.component';
     MenuComponent,
     HomeComponent,
     EditComponent,
+    EnderecoComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, RouterModule, ReactiveFormsModule, FormsModule, HttpClientModule, NgxMaskDirective,
     NgxMaskPipe, NgChartsModule, ChartModule, HighchartsChartModule
-  ],
+],
 
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

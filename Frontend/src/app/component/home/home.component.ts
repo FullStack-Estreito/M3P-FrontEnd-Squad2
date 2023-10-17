@@ -9,7 +9,7 @@ import { IUsuario } from 'src/app/interfaces/IUsuario';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  implements OnInit {
+export class HomeComponent implements OnInit {
   title = 'Frontend';
 
 
@@ -29,6 +29,13 @@ export class HomeComponent  implements OnInit {
       this.usuarios = user;
       console.log(user);
     })
+  }
+
+  Detalhes(id: number) {
+    this.frontService.idDetail = id;
+    this.frontService.boolEditar = true;
+    this.frontService.atvBotao = true;
+    this.router.navigate([`/edit/${id}`])
   }
 
 
