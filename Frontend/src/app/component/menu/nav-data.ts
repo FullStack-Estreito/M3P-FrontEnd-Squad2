@@ -17,11 +17,11 @@ export const navBarData = [
     icon: 'fa fa-syringe',
     label: 'Editar'
   },
-  //  {
-  //   routeLink: '/private/paciente',
-  //   icon: 'fa fa-head-side',
-  //   label: 'Pacientes'
-  // },
+   {
+    routeLink: '/endereco',
+    icon: 'fa fa-head-side',
+    label: 'Endereco'
+  },
   // {
   //   routeLink: '/private/dash',
   //   icon: 'fa fa-sign-out',

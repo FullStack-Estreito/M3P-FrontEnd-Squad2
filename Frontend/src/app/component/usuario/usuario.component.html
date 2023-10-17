@@ -1,111 +1,126 @@
 <div class="cont">
   <app-menu></app-menu>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-2">
-        <h2 style="color: wheat">Usuarios</h2>
-        <br />
-        <form [formGroup]="registerForm">
-          <div class="form-group">
-            <div class="form-floating mb-3">
-              <input
-                [ngClass]="{'is-invalid': submitted && registerForm.controls?.['nome']?.errors}"
-                type="text"
-                formControlName="nome"
-                class="form-control"
-                placeholder="nome"
-              />
-              <label>Nome</label>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-2">
+          <h2 style="color: wheat">Usuarios</h2>
+          <br />
+          <form [formGroup]="registerForm">
+            <div class="form-group">
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  formControlName="endereco_Id"
+                  class="form-control"
+                  [(ngModel)]="endId"
+                  placeholder="endereco_Id"
+                />
+                <label>Endereço Id</label>
+              </div>
             </div>
-          </div>
-          <div
-            *ngIf="submitted && registerForm.controls?.['nome']?.errors"
-            class="text-danger"
+            <div class="form-group">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  formControlName="nome"
+                  class="form-control"
+                  placeholder="nome"
+                />
+                <label>Nome</label>
+              </div>
+            </div>
+            <div
+              *ngIf="submitted && registerForm.controls?.['nome']?.errors"
+              class="text-danger"
+            >
+              <div
+                *ngIf="registerForm.controls?.['nome']?.errors?.['required']"
+              >
+                O Email é obrigatório!!
+              </div>
+              <div *ngIf="registerForm.controls?.['nome']?.errors?.['nome']">
+                Formato incorreto!!
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-floating mb-3">
+                <input
+                  [ngClass]="{
+                    'is-invalid':
+                      submitted && registerForm.controls['cpf']?.errors
+                  }"
+                  type="text"
+                  formControlName="cpf"
+                  mask="000.000.000-00"
+                  class="form-control"
+                  placeholder="kkkkkk"
+                />
+                <label>Cpf</label>
+
+                <div
+                  *ngIf="submitted && registerForm.controls?.['cpf']?.errors"
+                  class="text-danger"
+                >
+                  <div
+                    *ngIf="registerForm.controls?.['cpf']?.errors?.['required']"
+                  >
+                    O CPF é obrigatório!!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-floating mb-3">
+                <input
+                  [ngClass]="{
+                    'is-invalid':
+                      submitted && registerForm.controls['email']?.errors
+                  }"
+                  type="text"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="kkkkkk"
+                />
+                <label>Email</label>
+
+                <div
+                  *ngIf="submitted && registerForm.controls?.['email']?.errors"
+                  class="text-danger"
+                >
+                  <div
+                    *ngIf="registerForm.controls?.['email']?.errors?.['email']"
+                  >
+                    O Email é obrigatório!!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <button
+            class="btn btn-primary"
+            [disabled]="disBotao"
+            (click)="OnSubmit()"
           >
-            <div *ngIf="registerForm.controls?.['nome']?.errors?.['required']">
-              O Email é obrigatório!!
-            </div>
-            <div *ngIf="registerForm.controls?.['nome']?.errors?.['nome']">
-              Formato incorreto!!
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-floating mb-3">
-              <input
-                [ngClass]="{
-                  'is-invalid':
-                    submitted && registerForm.controls['cpf']?.errors
-                }"
-                type="text"
-                formControlName="cpf"
-                mask="000.000.000-00"
-                class="form-control"
-                placeholder="kkkkkk"
-              />
-              <label>Cpf</label>
-
-              <div
-                *ngIf="submitted && registerForm.controls?.['cpf']?.errors"
-                class="text-danger"
-              >
-                <div
-                  *ngIf="registerForm.controls?.['cpf']?.errors?.['required']"
-                >
-                  O CPF é obrigatório!!
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-floating mb-3">
-              <input
-                [ngClass]="{
-                  'is-invalid':
-                    submitted && registerForm.controls['email']?.errors
-                }"
-                type="text"
-                formControlName="email"
-                class="form-control"
-                placeholder="kkkkkk"
-              />
-              <label>Email</label>
-
-              <div
-                *ngIf="submitted && registerForm.controls?.['email']?.errors"
-                class="text-danger"
-              >
-                <div
-                  *ngIf="registerForm.controls?.['email']?.errors?.['email']"
-                >
-                  O Email é obrigatório!!
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-        <button
-          class="btn btn-primary"
-          [disabled]="disBotao"
-          (click)="OnSubmit()"
-        >
-          CADASTRAR
-        </button>
-        <button
-          class="btn btn-warning"
-          [disabled]="!disBotao"
-          (click)="editar()"
-        >
-          EDITAR
-        </button>
-        <button
-          class="btn btn-danger"
-          [disabled]="!disBotao"
-          (click)="excluir()"
-        >
-          DELETAR
-        </button>
+            CADASTRAR
+          </button>
+          <button
+            class="btn btn-warning"
+            [disabled]="!disBotao"
+            (click)="editar()"
+          >
+            EDITAR
+          </button>
+          <button
+            class="btn btn-danger"
+            [disabled]="!disBotao"
+            (click)="excluir()"
+          >
+            DELETAR
+          </button>
+        </div>
       </div>
     </div>
   </div>
+
