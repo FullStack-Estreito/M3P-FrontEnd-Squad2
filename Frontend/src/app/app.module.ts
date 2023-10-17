@@ -6,10 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { NgChartsModule } from 'ng2-charts';
-
-import { HighchartsChartModule } from 'highcharts-angular';
-import { ChartModule } from 'angular-highcharts';
 import { UsuarioComponent } from './shared/components/usuario/usuario.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeComponent } from './shared/components/home/home.component';
@@ -27,12 +23,12 @@ import { LoginComponent } from './views/login/login.component';
     EditComponent,
     EnderecoComponent,
     NotFoundComponent,
-    LoginComponen,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, RouterModule, ReactiveFormsModule, FormsModule, HttpClientModule, NgxMaskDirective,
-    NgxMaskPipe, NgChartsModule, ChartModule, HighchartsChartModule
+    NgxMaskPipe
   ],
 
   providers: [provideNgxMask()],
