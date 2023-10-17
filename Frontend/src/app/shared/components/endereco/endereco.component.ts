@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IUsuario } from 'src/app/interfaces/IUsuario';
-import { IEndereco } from 'src/app/interfaces/IEndereco';
-import { FrontService } from 'src/app/service/front.service';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
+import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
+import { FrontService } from 'src/app/shared/services/front.service';
 
 @Component({
   selector: 'app-endereco',

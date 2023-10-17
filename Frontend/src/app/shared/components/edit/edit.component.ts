@@ -1,7 +1,7 @@
-import { FrontService } from './../../service/front.service';
+import { FrontService } from '../../services/front.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IUsuario } from 'src/app/interfaces/IUsuario';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 
 @Component({
   selector: 'app-edit',

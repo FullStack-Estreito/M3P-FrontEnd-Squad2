@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IEndereco } from 'src/app/interfaces/IEndereco';
-import { IUsuario } from 'src/app/interfaces/IUsuario';
-import { FrontService } from 'src/app/service/front.service';
+import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
+import { FrontService } from 'src/app/shared/services/front.service';
 
 import { HostListener } from '@angular/core';
 

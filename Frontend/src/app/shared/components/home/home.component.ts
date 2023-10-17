@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { FrontService } from './../../service/front.service';
+import { FrontService } from '../../services/front.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IUsuario } from 'src/app/interfaces/IUsuario';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 
 @Component({
   selector: 'app-home',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FrontService } from 'src/app/service/front.service';
+import { FrontService } from 'src/app/shared/services/front.service';
 import { navBarData } from './nav-data';
-import { IUsuario } from 'src/app/interfaces/IUsuario';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
