@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
@@ -18,7 +16,7 @@ import { HomeComponent } from './component/home/home.component';
 import { EditComponent } from './component/edit/edit.component';
 import { EnderecoComponent } from './component/endereco/endereco.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
-
+import { LoginComponent } from './views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +27,7 @@ import { NotFoundComponent } from './component/not-found/not-found.component';
     EditComponent,
     EnderecoComponent,
     NotFoundComponent,
+    LoginComponen,
   ],
   imports: [
     BrowserModule,
