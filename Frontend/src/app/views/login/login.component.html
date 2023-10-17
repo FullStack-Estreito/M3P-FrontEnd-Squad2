@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <h1>login</h1>
+
+    <div class="container-formulario">
+
+        <h1>LOGIN</h1>
+        <!-- Formulário de login -->
+        <form>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputValue">
+                <label for="floatingInputValue">Usuário</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingInputValue">
+                <label for="floatingInputValue">Senha</label>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Entrar</button>
+        </form>
+
+        <div id="container-button">
+            <!-- Botão modal cadastrar conta -->
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Cadastrar conta
+            </button>
+
+            <!-- Botão resetar senha -->
+            <button type="button" class="btn btn-link">
+                Esqueci minha senha
+            </button>  
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">AVISO</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          Para criar uma conta entre um contato com o administrador
+        </div>
+      </div>
+    </div>
+  </div>
