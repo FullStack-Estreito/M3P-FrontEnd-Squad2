@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
-import { IUsuario } from '../interfaces/IUsuario';
 import { IEndereco } from '../interfaces/IEndereco';
+import { IUsuario } from '../interfaces/IUsuario';
 
 @Injectable({
   providedIn: 'root'
