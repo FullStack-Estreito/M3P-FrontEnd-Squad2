@@ -5,12 +5,13 @@ body {
 }
 
 .sidenav {
-  background: #1b325f;
+  position: fixed;
+  top: 8%;
+  background: #0e4b69;
   transition: all 0.5s ease;
-  position: relative;
   z-index: 1;
-  top: 0;
-  height: 100vh;
+  height: 92%;
+  width: 100px;
 }
 
 .sidenav-aberto {
@@ -55,7 +56,7 @@ body {
 }
 
 #btn-sair {
-  margin-top: 140px;
+  margin-top: 40px;
   font-family: 'Inter', sans-serif;
   color: white;
   font-weight: 200;
