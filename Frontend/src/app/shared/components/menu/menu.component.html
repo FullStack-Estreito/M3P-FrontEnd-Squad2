@@ -1,8 +1,8 @@
 <div class="sidenav" [ngClass]="menuaberto ? 'sidenav-aberto': '' ">
   <div class="sidenav-container">
 
-    <button class="btn btn-link" (click)="alterarEstadoMenu()">
-      <img src="../../../../assets/menu-icons/menu.svg" alt=""
+    <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="menuaberto ? 'sidenav-aberto-button': '' ">
+      <img src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
       style="height: 30px;">
     </button>
 
