@@ -13,6 +13,8 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { LoginComponent } from './views/login/login.component';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { PrivateComponent } from './views/private/private.component';
+import { PublicComponent } from './views/public/public.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
     NotFoundComponent,
     LoginComponent,
     ToolbarComponent,
+    PrivateComponent,
+    PublicComponent,
   ],
   imports: [
     BrowserModule,
