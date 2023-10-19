@@ -11,7 +11,7 @@ export class MenuComponent  {
 
   constructor(private route: Router) {}
 
-  menuaberto = true;
+  menuaberto = false;
 
   alterarEstadoMenu() {
     this.menuaberto = !this.menuaberto
