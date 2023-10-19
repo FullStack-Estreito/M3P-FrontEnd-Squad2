@@ -8,7 +8,7 @@ body {
   position: fixed;
   top: 62px;
   background: #0e4b69;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
   z-index: 2;
   min-height: 92vh;
   width: 100px;
@@ -16,6 +16,10 @@ body {
 
 .sidenav-aberto {
   width: 200px;
+}
+
+.sidenav-aberto-button {
+  padding-right: 112px;
 }
 
 .sidenav-container {
