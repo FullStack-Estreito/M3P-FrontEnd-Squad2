@@ -35,3 +35,9 @@
 .toolbar-nome-usuario{
     font-size: 14px;
 }
+
+@media (max-width: 647px){
+    .toolbar-usuario {
+        display: none;
+    }
+}
