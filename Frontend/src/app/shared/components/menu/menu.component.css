@@ -6,11 +6,11 @@ body {
 
 .sidenav {
   position: fixed;
-  top: 8%;
+  top: 62px;
   background: #0e4b69;
   transition: all 0.5s ease;
   z-index: 1;
-  height: 92%;
+  min-height: 92vh;
   width: 100px;
 }
 
