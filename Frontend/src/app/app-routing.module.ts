@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './shared/components/home/home.component';
-import { EditComponent } from './shared/components/edit/edit.component';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 
-const routes: Routes = [
 
-  // { path: 'usuario', component: UsuarioComponent },
-  // { path: 'endereco', component: EnderecoComponent },
-  { path: '', component: HomeComponent },
-  { path: 'edit/:id', component: EditComponent },
-  { path: '**', component: NotFoundComponent }
-
+const routes: Routes = [ 
+  {path: '', loadChildren: () => import('../app/views/public/public.module').then(m => m.PublicModule)},
+  {path: 'private', loadChildren: () => import('../app/views/private/private.module').then(m => m.PrivateModule)}
 ]
+
+// { path: 'usuario', component: UsuarioComponent },
+// { path: 'endereco', component: EnderecoComponent },
+//   { path: '', component: HomeComponent },
+//   { path: 'edit/:id', component: EditComponent },
+//   { path: '**', component: NotFoundComponent }
+
+
 
 @NgModule({
   declarations: [],

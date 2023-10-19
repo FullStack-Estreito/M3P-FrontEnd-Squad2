@@ -7,26 +7,19 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 // import { UsuarioComponent } from './shared/components/usuario/usuario.component'
-import { MenuComponent } from './shared/components/menu/menu.component';
 import { HomeComponent } from './shared/components/home/home.component';
 import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { LoginComponent } from './views/login/login.component';
-import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { PrivateComponent } from './views/private/private.component';
-import { PublicComponent } from './views/public/public.component';
+import { PublicModule } from './views/public/public.module';
+import { PrivateModule } from './views/private/private.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     HomeComponent,
     EditComponent,
-    NotFoundComponent,
-    LoginComponent,
-    ToolbarComponent,
-    PrivateComponent,
-    PublicComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +29,9 @@ import { PublicComponent } from './views/public/public.component';
     FormsModule, 
     HttpClientModule, 
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    PublicModule,
+    PrivateModule
   ],
 
   providers: [provideNgxMask()],
