@@ -2,7 +2,7 @@
 
 .toolbar{
     position: absolute;
-    height: 8%;
+    height: 62px;
     width: 100vw;
     top: 0;
     background-color: #76a5c8;
@@ -20,7 +20,7 @@
     margin-left: 200px;
     margin-top: 16px;
     border-bottom: 2px solid black;
-    padding-bottom: 12.5px;
+    padding-bottom: 13px;
     font-size: 24px;
 }
 
