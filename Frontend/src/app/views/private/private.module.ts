@@ -5,13 +5,15 @@ import { ToolbarComponent } from '../../shared/components/toolbar/toolbar.compon
 import { PrivateRoutingModule } from './private-routing.module';
 import { RouterModule } from '@angular/router';
 import { PrivateComponent } from './private.component';
+import { EmpresaComponent } from '../../shared/components/empresa/empresa.component';
 
 
 @NgModule({
   declarations: [
     PrivateComponent,
     MenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EmpresaComponent
   ],
   imports: [
     CommonModule,

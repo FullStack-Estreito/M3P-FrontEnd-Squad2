@@ -10,9 +10,9 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './shared/components/home/home.component';
 import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { PrivateComponent } from './views/private/private.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+
 
 @NgModule({
   declarations: [

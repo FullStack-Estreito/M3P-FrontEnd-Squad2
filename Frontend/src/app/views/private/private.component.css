@@ -1,0 +1,13 @@
+.container-router {
+    position: fixed;
+    top: 62px;
+    left: 120px;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color:  #F9F9FA;
+    padding-left: 135px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
