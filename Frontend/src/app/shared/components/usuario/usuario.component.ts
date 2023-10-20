@@ -1,19 +1,37 @@
-// import { Component, Input, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
-// import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
-// import { FrontService } from 'src/app/shared/services/front.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
+import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
+import { FrontService } from 'src/app/shared/services/front.service';
 
-// import { HostListener } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 
-// @Component({
-//   selector: 'app-usuario',
-//   templateUrl: './usuario.component.html',
-//   styleUrls: ['./usuario.component.css']
-// })
-// export class UsuarioComponent {
+@Component({
+  selector: 'app-usuario',
+  templateUrl: './usuario.component.html',
+  styleUrls: ['./usuario.component.css']
+})
+export class UsuarioComponent {
+
+  showFormularioRegistro: boolean = false;
+  showFormularioEditar: boolean = false;
+
+  formularioRegistro(){
+    this.showFormularioRegistro = !this.showFormularioRegistro;
+    if (this.showFormularioEditar === true){
+      this.showFormularioEditar = false;
+    }
+  }
+
+  formularioEditar(){
+    this.showFormularioEditar = !this.showFormularioEditar;
+    if (this.showFormularioRegistro === true){
+      this.showFormularioRegistro = false;
+    }
+  }
+}
 
 //   @Input() usuarioData: IUsuario | null = null;
 

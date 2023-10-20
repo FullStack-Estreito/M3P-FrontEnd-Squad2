@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 
+.container {
+    width: 90%;
+    margin: 0px;
+}
 
-.titulo{
+.titulo {
     font-family: 'Nunito', sans-serif;
-    font-size: 19px;
+    font-size: 16px;
+    letter-spacing: 26x;
     font-weight: 500;
     color: #172c3c;
+    padding: 20px;
+    width: 100%;
+    background-color: #00858569;
+    border: 0.7px solid black;
+    border-radius: 8px;
 }
 
 .icone-titulo {
@@ -13,22 +23,24 @@
 }
 
 .form {
-    width: 80%;
+    width: 100%;
     margin-top: 35px;
 }
 
-.form-floating{
+.form-floating {
     margin-top: 20px;
 }
 
-.form-control{
+.form-control {
     font-size: 14px;
     font-family: 'Nunito', sans-serif;
 }
-.div-btn{
+
+.div-btn {
     display: flex;
     justify-content: flex-end;
 }
+
 .btn.btn-dark {
     font-size: 14px;
     font-family: 'Nunito', sans-serif;
@@ -39,4 +51,3 @@
     padding-right: 25px;
     padding-left: 25px;
 }
-

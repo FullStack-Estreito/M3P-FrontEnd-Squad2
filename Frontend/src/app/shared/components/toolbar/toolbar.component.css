@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
 
-.toolbar{
+.toolbar {
     position: absolute;
     height: 62px;
     width: 100vw;
     top: 0;
-    background-color: #76a5c8;
+    background-color: #006666;
     font-family: 'Inter', sans-serif;
     z-index: 2;
 }
@@ -20,8 +20,8 @@
 .toolbar-titulo {
     margin-left: 200px;
     margin-top: 16px;
-    border-bottom: 2px solid black;
-    padding-bottom: 13px;
+    border-bottom: 3px solid black;
+    padding-bottom: 11.5px;
     font-size: 24px;
 }
 
@@ -33,11 +33,11 @@
     margin-right: 70px;
 }
 
-.toolbar-nome-usuario{
+.toolbar-nome-usuario {
     font-size: 14px;
 }
 
-@media (max-width: 647px){
+@media (max-width: 647px) {
     .toolbar-usuario {
         display: none;
     }
