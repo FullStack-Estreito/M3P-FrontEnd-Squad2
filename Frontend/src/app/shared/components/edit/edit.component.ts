@@ -17,7 +17,7 @@ export class EditComponent {
 
   ngOnInit(): void {
     const id = Number(this.router.snapshot.paramMap.get("id"))
-    this.frontService.getId(id, "usuarios", this.frontService.usuarios).subscribe((item) => {
+    this.frontService.getId(id).subscribe((item) => {
       this.usuario = item;
     });
   }

@@ -13,29 +13,31 @@ import { HostListener } from '@angular/core';
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.css']
 })
-export class UsuarioComponent {
+export class UsuarioComponent implements OnInit {
 
   @Input() usuarioData: IUsuario | null = null;
 
-  enderecos: Array<IEndereco> = [];
   submitted = false;
   disBotao = this.frontService.atvBotao;
   registerForm!: FormGroup;
   usuarios: Array<IUsuario> = [];
   endId = 0;
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
-    this.onLoad();
   }
-  BuscarEnderecos() {
-    this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.frontService.id_Endereco);
-      console.log(user.length);
-      for (let i = 0; i < this.enderecos.length; i++) {
-        if (this.enderecos[i].id > this.endId) {
-          this.endId = this.enderecos[i].id;
-        }
-      }
+
+  salvar() {
+    this.frontService.add(this.registerForm.value).subscribe((user => {
+      this.usuarios.push(user);
+      this.Buscar();
+    }));
+  }
+
+
+
+  excluir() {
+    this.frontService.del(this.frontService.idDelete).subscribe(user => {
+      this.usuarios.push(user);
+      alert("deletado");
     });
   }
 
@@ -47,71 +49,56 @@ export class UsuarioComponent {
   }
 
 
-  salvar() {
-    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
-      this.usuarios.push(user);
-      this.Buscar();
-    }));
-  }
-  editar() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else
-      this.frontService.edit(this.registerForm.value, this.frontService.idDelete).subscribe(user => {
-        this.usuarios.push(user);
-      });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/']);
-  }
-
-  excluir() {
-    this.frontService.del(this.frontService.idDelete).subscribe(user => {
-      this.usuarios.push(user);
-      alert("deletado");
-      this.Buscar();
-    });
-  }
-
   OnSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
-      return;
+      return
     } else {
       this.salvar();
-      this.router.navigate(['/'])
+      alert('salvo!');
+      this.router.navigate(['/']);
     }
   }
 
   EditarUsuario() {
     this.submitted = true;
     if (this.registerForm.invalid) {
-      return;
-    } else
+      return
+    } else {
       this.frontService.edit(this.registerForm.value, this.frontService.idDetail).subscribe(user => {
-        this.frontService.usuarios.push(user);
+        this.usuarios.push(user);
+        this.Buscar();
       });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/home']);
+      this.frontService.boolEditar = false;
+      alert('Editado com sucesso!');
+      this.router.navigate(['/']);
+    }
   }
 
-  @HostListener('window:load')
-  onLoad() {
-    this.BuscarEnderecos();
+  ngOnInit(): void {
+
     this.registerForm = this.formBuilder.group({
-      id: [''],
-      nome: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
-      telefone: ["2222222211"],
-      genero: ["male"],
-      tipo: ["admin"],
-      status_sistema: [true],
-      senha: ["12345676"],
-      matricula_Aluno: ["12345"],
-      codigo_Registro_Professor: [1],
-      endereco_Id: [this.endId],
-      empresa_Id: [1]
+      id: [0],
+      nome: [this.usuarioData ? this.usuarioData.nome : ''],
+      email: [this.usuarioData ? this.usuarioData.email : '999'],
+      cpf: [this.usuarioData ? this.usuarioData.cpf : '111.111.111-11'],
+      telefone: [this.usuarioData ? this.usuarioData.telefone : "4444444"],
+      genero: [this.usuarioData ? this.usuarioData.genero : "male"],
+      tipo: [this.usuarioData ? this.usuarioData.tipo : ''],
+      senha: [this.usuarioData ? this.usuarioData.senha : "12345676"],
+      matricula_Aluno: [this.usuarioData ? this.usuarioData.matricula_Aluno : "12345"],
+      codigo_Registro_Professor: [this.usuarioData ? this.usuarioData.codigo_Registro_Professor : 0],
+      cep: [this.usuarioData ? this.usuarioData.cep : 'teste'],
+      localidade: [this.usuarioData ? this.usuarioData.localidade : 'eeee'],
+      uf: [this.usuarioData ? this.usuarioData.uf : 'ee'],
+      logradouro: [this.usuarioData ? this.usuarioData.logradouro : 'eee'],
+      numero: [this.usuarioData ? this.usuarioData.numero : 'eee'],
+      complemento: [this.usuarioData ? this.usuarioData.complemento : 'eee'],
+      bairro: [this.usuarioData ? this.usuarioData.bairro : 'eee'],
     });
   }
 }
+
+
+
+

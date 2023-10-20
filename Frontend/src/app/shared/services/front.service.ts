@@ -9,9 +9,7 @@ import { IUsuario } from '../interfaces/IUsuario';
 })
 export class FrontService {
 
-  constructor(private http: HttpClient) {
-    this.BuscarEnderecos();
-  }
+  constructor(private http: HttpClient) {  }
   idDelete = 0;
   atvBotao = false;
   boolEditar = false;
@@ -31,31 +29,19 @@ export class FrontService {
   }
 
 
-  add(usuario: any, t: any, endpoint: string): Observable<typeof t> {
-    return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario);
+  add(usuario: IUsuario): Observable<IUsuario> {
+    return this.http.post<IUsuario>(`${this.apiBackBase}/CriarUsuarioCompleto`, usuario);
   }
 
-  edit(usuario: any, id: number): Observable<IUsuario> {
+  edit(usuario: IUsuario, id: number): Observable<IUsuario> {
     return this.http.put<IUsuario>(`${this.apiBackBase}/Update/${id}`, usuario)
   }
-  getId(id: number, endPoint: string, t: any): Observable<typeof t> {
-    return this.http.get<typeof t>(`${this.apiBackBase}/${endPoint}/${id}`)
+  getId(id: number): Observable<IUsuario> {
+    return this.http.get<IUsuario>(`${this.apiBackBase}/ObterUsuarioPorId/${id}`)
   }
 
   del(id: number): Observable<IUsuario> {
     return this.http.delete<IUsuario>(`${this.apiBackBase}/DeletarUsuario/${id}`)
   }
-
-  BuscarEnderecos() {
-    var end;
-    this.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.enderecos.length);
-      console.log(user.length);
-    });
-    return end;
-  }
-
-
 
 }

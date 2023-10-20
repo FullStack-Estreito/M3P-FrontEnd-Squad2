@@ -1,4 +1,5 @@
 export interface IUsuario {
+
   id: number;
   nome: string;
   cpf: string;
@@ -10,6 +11,13 @@ export interface IUsuario {
   status_sistema: boolean;
   matricula_Aluno: string;
   codigo_Registro_Professor: number;
-  empresa_Id: number;
-  endereco_Id: number;
+  cep: string;
+  localidade: string;
+  uf: string;
+  logradouro: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
 }
+
+

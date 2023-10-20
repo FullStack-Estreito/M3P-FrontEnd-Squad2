@@ -33,12 +33,4 @@ export class MenuComponent implements OnInit {
       console.log(user);
     })
   }
-
-
-  // testfunc() {
-  //   this.cv.sair();
-  //   this.route.navigate(['/']);
-  // }
-
-
 }
