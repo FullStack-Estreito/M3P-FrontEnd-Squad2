@@ -9,6 +9,9 @@ import { EmpresaComponent } from '../../shared/components/empresa/empresa.compon
 import { UsuarioComponent } from '../../shared/components/usuario/usuario.component'
 import { FormCriarUsuarioComponent } from '../../shared/components/form-criar-usuario/form-criar-usuario.component';
 import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-usuario/form-editar-usuario.component';
+import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,13 @@ import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-
     EmpresaComponent,
     UsuarioComponent,
     FormCriarUsuarioComponent,
-    FormEditarUsuarioComponent
+    FormEditarUsuarioComponent,
+    EnderecoComponent
   ],
+  providers: [provideNgxMask()],
   imports: [
-    CommonModule,
-    PrivateRoutingModule,
+    CommonModule, ReactiveFormsModule, FormsModule,
+    PrivateRoutingModule, NgxMaskDirective, NgxMaskPipe,
     RouterModule
   ]
 })

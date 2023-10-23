@@ -1,5 +1,4 @@
-export interface IEndereco {
-  id: number;
+export interface IEnderecoInput {
   cep: string;
   localidade: string;
   uf: string;

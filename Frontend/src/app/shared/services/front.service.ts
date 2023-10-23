@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
 import { IEndereco } from '../interfaces/IEndereco';
 import { IUsuario } from '../interfaces/IUsuario';
+import { ILogin } from '../interfaces/ILogin';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,6 @@ import { IUsuario } from '../interfaces/IUsuario';
 export class FrontService {
 
   constructor(private http: HttpClient) {
-    this.BuscarEnderecos();
   }
   idDelete = 0;
   atvBotao = false;
@@ -22,14 +22,13 @@ export class FrontService {
 
   id_Endereco: number = this.enderecos.length;
 
-  getCep(cep: string): Observable<IEndereco> {
-    return this.http.get<IEndereco>(`http://viacep.com.br/ws/${cep}/json`);
+  getCep(cep: string): Observable<any> {
+    return this.http.get<any>(`http://viacep.com.br/ws/${cep}/json`);
   }
 
   getAll(endpoint: string, tipo: any): Observable<typeof tipo[]> {
     return this.http.get<[]>(`${this.apiBackBase}/${endpoint}`);
   }
-
 
   add(usuario: any, t: any, endpoint: string): Observable<typeof t> {
     return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario);
@@ -46,14 +45,8 @@ export class FrontService {
     return this.http.delete<IUsuario>(`${this.apiBackBase}/DeletarUsuario/${id}`)
   }
 
-  BuscarEnderecos() {
-    var end;
-    this.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.enderecos.length);
-      console.log(user.length);
-    });
-    return end;
+  sign(login: ILogin): Observable<ILogin> {
+    return this.http.post<ILogin>(`${this.apiBackBase}/Login`, login)
   }
 
 
