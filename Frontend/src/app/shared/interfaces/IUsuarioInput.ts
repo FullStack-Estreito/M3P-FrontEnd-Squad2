@@ -1,7 +1,7 @@
 import { IEndereco } from "./IEndereco";
+import { IEnderecoInput } from "./IEnderecoInput";
 
-export interface IUsuario {
-  id: number;
+export interface IUsuarioInput {
   nome: string;
   cpf: string;
   tipo: string;
