@@ -26,7 +26,7 @@
         <label for="floatingInputValue">Senha</label>
       </div>
     </form>
-    <button class="btn btn-success w-100" (click)="OnSubmit()">Entrar</button>
+    <button id="button-login" class="btn btn-success" (click)="OnSubmit()">Entrar</button>
 
     <div id="container-button">
       <!-- Botão modal cadastrar conta -->
@@ -34,8 +34,7 @@
         type="button"
         class="btn btn-link"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
+        data-bs-target="#exampleModal">
         Cadastrar conta
       </button>
 

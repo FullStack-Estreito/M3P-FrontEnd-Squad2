@@ -28,7 +28,7 @@ h1 {
 }
 
 form,
-div#container-button {
+div#container-button, #button-login {
     width: 80%;
 }
 
