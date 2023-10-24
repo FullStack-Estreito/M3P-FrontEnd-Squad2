@@ -10,7 +10,6 @@
             formControlName="cep"
             class="form-control"
             (change)="BuscaCep()"
-            placeholder="Cep"
           />
           <label for="cep">CEP</label>
         </div>
@@ -25,9 +24,8 @@
               [readOnly]="true"
               [(ngModel)]="end.uf"
               class="form-control"
-              placeholder="uf"
             />
-            <label for="uf">uf</label>
+            <label for="uf">UF</label>
           </div>
         </div>
 
@@ -39,7 +37,6 @@
               formControlName="bairro"
               [(ngModel)]="end.bairro"
               class="form-control"
-              placeholder="Bairro"
             />
             <label for="bairro">Bairro</label>
           </div>
@@ -53,7 +50,6 @@
               formControlName="logradouro"
               [ngModel]="end.logradouro"
               class="form-control"
-              placeholder="Rua"
             />
             <label for="rua">Rua</label>
           </div>
@@ -66,7 +62,6 @@
                 formControlName="localidade"
                 [ngModel]="end.localidade"
                 class="form-control"
-                placeholder="localidade"
               />
               <label for="localidade">Localidade</label>
             </div>
@@ -78,7 +73,6 @@
                 type="text"
                 formControlName="numero"
                 class="form-control"
-                placeholder="numero"
               />
               <label for="numero">Número</label>
             </div>
@@ -90,7 +84,6 @@
                 type="text"
                 formControlName="complemento"
                 class="form-control"
-                placeholder="complemento"
               />
               <label>Complemento</label>
             </div>
@@ -99,9 +92,10 @@
       </div>
     </div>
 
+
+    <!-- Nome -->
     <div class="form-floating">
-      <input
-        type="text"
+      <input type="text"
         class="form-control"
         formControlName="nome"
         id="floatingInputValue"

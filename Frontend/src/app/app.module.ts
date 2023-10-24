@@ -11,6 +11,7 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { FormEditarAtendimentoComponent } from './shared/components/form-editar-atendimento/form-editar-atendimento.component';
 
 
 
