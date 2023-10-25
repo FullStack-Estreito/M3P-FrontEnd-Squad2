@@ -1,0 +1,35 @@
+<div class="container">
+
+  <!-- Título da página -->
+  <h1 class="container-title">
+    Atendimentos
+    <img src="../../../../assets/atendimentos/atendimentos.svg" alt="Ícone atendimentos">
+  </h1>
+
+
+  <div class="container-button">
+    <!-- Botão de buscar aluno -->
+    <button id="button-register" class="btn btn-secondary" (click)="formularioBuscarAluno()" type="button">
+      Buscar aluno
+    </button>
+
+    <!-- Botão de editar atendimento -->
+    <button id="button-editer" class="btn btn-secondary" (click)="formularioEditarAtendimento()">
+      Editar atendimento
+    </button>
+  </div>
+
+  <!-- Formulários -->
+  <div class="container-formularios">
+
+    <ng-container *ngIf="showFormularioBuscarAluno">
+      <app-form-buscar-aluno></app-form-buscar-aluno>
+    </ng-container>
+
+    <ng-container *ngIf="showFormularioEditarAtendimento">
+    <app-form-editar-atendimento></app-form-editar-atendimento>
+    </ng-container>
+
+  </div>
+
+</div>

@@ -1,0 +1,105 @@
+<div class="container">
+  <form class="form">
+
+    <!-- Nome -->
+    <div class="form-floating">
+      <label class="label-select" for="floatingInputValue">Usuário</label>
+      <select class="form-select" aria-label="Default select example">
+        <option value="masculino">1</option>
+        <option value="feminino">2</option>
+        <option value="outro">3</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <!-- Gênero -->
+      <div class="col-md">
+        <div class="form-floating">
+          <label class="label-select" for="floatingInputValue">Gênero</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <label class="label-select" for="floatingInputValue">Tipo</label>
+          <select class="form-select">
+            <option value="administrador">Administrador</option>
+            <option value="pedagogo">Pedagogo</option>
+            <option value="professor">Professor</option>
+            <option value="aluno">Aluno</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- CPF -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue" disabled>
+          <label for="floatingInputValue">CPF</label>
+        </div>
+      </div>
+      <!-- Telefone -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue">
+          <label for="floatingInputValue">Telefone</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Email -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInputValue">
+          <label for="floatingInputValue">Email</label>
+        </div>
+      </div>
+      <!-- Senha -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingInputValue">
+          <label for="floatingInputValue">Senha</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Código professor -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue">
+          <label for="floatingInputValue">Código professor</label>
+        </div>
+      </div>
+      <!-- Matrícula aluno -->
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue">
+          <label for="floatingInputValue">Matrícula aluno</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-check">
+      <!-- Ativo -->
+      <input class="form-check-input" type="checkbox" value="true" id="flexCheckCheckedDisabled" checked>
+      <label class="form-check-label" for="flexCheckCheckedDisabled">
+        Ativo
+      </label>
+    </div>
+
+
+    <!-- Botão salvar -->
+    <div class="div-btn">
+      <button type="submit" class="btn btn-dark">SALVAR ALTERAÇÕES</button>
+    </div>
+  </form>
+</div>

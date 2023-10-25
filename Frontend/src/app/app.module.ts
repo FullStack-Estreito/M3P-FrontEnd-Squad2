@@ -11,6 +11,9 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { FormBuscarAlunoComponent } from './shared/components/form-buscar-aluno/form-buscar-aluno.component';
+import { FormEditarAtendimentoComponent } from './shared/components/form-editar-atendimento/form-editar-atendimento.component';
+import { AtendimentosComponent } from './shared/components/atendimentos/atendimentos.component';
 
 
 
@@ -20,15 +23,16 @@ import { PrivateModule } from './views/private/private.module';
     AppComponent,
     HomeComponent,
     EditComponent,
+    AtendimentosComponent,
     NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    RouterModule, 
-    ReactiveFormsModule, 
-    FormsModule, 
-    HttpClientModule, 
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     NgxMaskDirective,
     NgxMaskPipe,
     PublicModule,
