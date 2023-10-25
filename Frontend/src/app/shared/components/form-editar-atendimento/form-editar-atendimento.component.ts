@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
 import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 import { FrontService } from 'src/app/shared/services/front.service';
+=======
+import { Component } from '@angular/core';
+>>>>>>> origin/develop
 
 @Component({
   selector: 'app-form-editar-atendimento',
@@ -11,6 +15,7 @@ import { FrontService } from 'src/app/shared/services/front.service';
   styleUrls: ['./form-editar-atendimento.component.css']
 })
 export class FormEditarAtendimentoComponent {
+<<<<<<< HEAD
   @Input() usuarioData: IUsuario | null = null;
 
   enderecos: Array<IEndereco> = [];
@@ -140,5 +145,7 @@ export class FormEditarAtendimentoComponent {
   get idEnd() {
     return this.registerForm.get('idEnd')!
   }
+=======
+>>>>>>> origin/develop
 
 }

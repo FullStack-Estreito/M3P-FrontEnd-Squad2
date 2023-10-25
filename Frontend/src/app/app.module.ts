@@ -11,9 +11,6 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
-import { FormBuscarAlunoComponent } from './shared/components/form-buscar-aluno/form-buscar-aluno.component';
-import { FormEditarAtendimentoComponent } from './shared/components/form-editar-atendimento/form-editar-atendimento.component';
-import { AtendimentosComponent } from './shared/components/atendimentos/atendimentos.component';
 
 
 
@@ -23,7 +20,6 @@ import { AtendimentosComponent } from './shared/components/atendimentos/atendime
     AppComponent,
     HomeComponent,
     EditComponent,
-    AtendimentosComponent,
     NotFoundComponent
   ],
   imports: [

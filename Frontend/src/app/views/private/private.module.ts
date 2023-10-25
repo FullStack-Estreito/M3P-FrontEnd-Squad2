@@ -6,12 +6,18 @@ import { PrivateRoutingModule } from './private-routing.module';
 import { RouterModule } from '@angular/router';
 import { PrivateComponent } from './private.component';
 import { EmpresaComponent } from '../../shared/components/empresa/empresa.component';
-import { UsuarioComponent } from '../../shared/components/usuario/usuario.component'
+import { UsuarioComponent } from '../../shared/components/usuarios/usuario.component'
 import { FormCriarUsuarioComponent } from '../../shared/components/form-criar-usuario/form-criar-usuario.component';
 import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-usuario/form-editar-usuario.component';
 import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
+import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
+import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-editar-atendimento/form-editar-atendimento.component';
+import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
+import { FormCriarExercicioComponent } from 'src/app/shared/components/form-criar-exercicio/form-criar-exercicio.component';
+import { FormEditarExercicioComponent } from 'src/app/shared/components/form-editar-exercicio/form-editar-exercicio.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     UsuarioComponent,
     FormCriarUsuarioComponent,
     FormEditarUsuarioComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    AtendimentosComponent,
+    FormCriarAtendimentoComponent,
+    FormEditarAtendimentoComponent,
+    ExerciciosComponent,
+    FormCriarExercicioComponent,
+    FormEditarExercicioComponent
   ],
   providers: [provideNgxMask()],
   imports: [

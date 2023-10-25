@@ -2,35 +2,35 @@
 
     <!-- Título da página -->
     <h1 class="container-title">
-      Atendimentos
-      <img src="../../../../assets/atendimentos/atendimentos.svg" alt="Ícone atendimentos">
+      Exercícios
+      <img src="../../../../assets/exercicios/exercicios.svg" alt="Ícone exercícios">
     </h1>
-
-
+  
+  
     <div class="container-button">
       <!-- Botão de registrar novo usuário -->
       <button id="button-register" class="btn btn-secondary" (click)="formularioRegistro()" type="button">
-        Registrar novo atendimento
+        Registrar novo exercício
       </button>
-
+  
       <!-- Botão de editar usuário -->
       <button id="button-editer" class="btn btn-secondary" (click)="formularioEditar()">
-        Editar um atendimento
+        Editar um exercício
       </button>
     </div>
-
+  
     <!-- Formulários -->
     <div class="container-formularios">
-
+  
       <ng-container *ngIf="showFormularioRegistro">
-        <app-form-criar-atendimento></app-form-criar-atendimento>
+        <app-form-criar-exercicio></app-form-criar-exercicio>
       </ng-container>
-
+  
       <ng-container *ngIf="showFormularioEditar">
-        <app-form-editar-atendimento></app-form-editar-atendimento>
+        <app-form-editar-exercicio></app-form-editar-exercicio>
       </ng-container>
-
+  
     </div>
-
+  
   </div>
-
+  
