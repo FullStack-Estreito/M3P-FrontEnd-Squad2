@@ -6,6 +6,7 @@ import { UsuarioComponent } from 'src/app/shared/components/usuarios/usuario.com
 import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
 import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
+import { AvaliacoesComponent } from 'src/app/shared/components/avaliacoes/avaliacoes.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuarioComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'atendimentos', component: AtendimentosComponent },
-      { path: 'exercicios', component: ExerciciosComponent }
+      { path: 'exercicios', component: ExerciciosComponent },
+      { path: 'avaliacoes', component: AvaliacoesComponent }
 
 
 

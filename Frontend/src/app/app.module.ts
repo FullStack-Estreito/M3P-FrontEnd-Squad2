@@ -17,16 +17,15 @@ import { PrivateModule } from './views/private/private.module';
     AppComponent,
     HomeComponent,
     EditComponent,
-    NotFoundComponent,
-   
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    RouterModule, 
-    ReactiveFormsModule, 
-    FormsModule, 
-    HttpClientModule, 
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     NgxMaskDirective,
     NgxMaskPipe,
     PublicModule,

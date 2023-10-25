@@ -1,0 +1,35 @@
+<div class="container">
+
+  <!-- Título da página -->
+  <h1 class="container-title">
+    Avaliações
+    <img src="../../../../assets/avaliacoes/avaliacoes.svg" alt="Ícone avaliações">
+  </h1>
+
+
+  <div class="container-button">
+    <!-- Botão de registrar novo usuário -->
+    <button id="button-register" class="btn btn-secondary" (click)="formularioRegistro()" type="button">
+      Registrar nova avaliação
+    </button>
+
+    <!-- Botão de editar usuário -->
+    <button id="button-editer" class="btn btn-secondary" (click)="formularioEditar()">
+      Editar uma avaliação
+    </button>
+  </div>
+
+  <!-- Formulários -->
+  <div class="container-formularios">
+
+    <ng-container *ngIf="showFormularioRegistro">
+      <app-form-criar-avaliacao></app-form-criar-avaliacao>
+    </ng-container>
+
+    <ng-container *ngIf="showFormularioEditar">
+      <app-form-editar-avaliacao></app-form-editar-avaliacao>
+    </ng-container>
+
+  </div>
+
+</div>
