@@ -1,42 +1,56 @@
-<form action="">
-    <!-- Aluno -->
-    <div class="form-floating">
-        <select class="form-select" formControlName="genero" aria-label="Default select example">
-            <option value="masculino">Aluno1</option>
-            <option value="feminino">Aluno2</option>
-            <option value="outro">Aluno3</option>
-        </select>
-        <label for="floatingInputValue" class="label-select">Aluno</label>
-    </div>
-    
+<div class="container">
+  <form class="form">
+
+    <!-- Nome -->
     <div class="row">
-        <!-- Descrição -->
-        <div class="col-md">
-            <div class="form-floating">
-                <input type="text" class="form-control"/>
-                <label for="floatingInputValue">Descrição</label>
-            </div>
+      <div class="col">
+        <label for="aluno_Nome">Nome Aluno</label>
+        <input type="text" class="form-control" id="aluno_Nome" formControlName="aluno_Nome">
+      </div>
+    </div>
+    <p></p>
+
+    <!-- Descrição -->
+    <div class="row">
+      <div class="col">
+        <label for="descricao">Descrição</label>
+        <textarea class="form-control" name="descricao" id="descricao" rows="3" formControlName="descricao"></textarea>
+        <!--        <span class="msg-erro-form text-danger" *ngIf="validarMensagemDeErro('descricao')">Por favor insira a
+          descrição do atendimento</span> -->
+      </div>
+    </div>
+    <p></p>
+
+    <div class="row">
+      <div class="col">
+        <label for="data">Data </label>
+        <input type="date" class="form-control" id="data" formControlName="data">
+      </div>
+      <p></p>
+
+      <div class="row">
+        <div class="col">
+          <label for="pedagogo_Nome">Nome Pedagogo</label>
+          <input type="text" class="form-control" id="pedagogo_Nome" formControlName="pedagogo_Nome">
+          <!--           <span class="msg-erro-form text-danger" *ngIf="validarMensagemDeErro('titulo')">Por favor insira
+              titulo do acompanhamento</span> -->
         </div>
-        <!-- Data -->
-        <div class="col-md">
-            <div class="form-floating">
-                <input type="date" class="form-control">
-            </div>
-        </div>
+      </div>
+    </div>
+    <!-- Status -->
+    <div class="form-check">
+      <!-- Ativo -->
+      <input class="form-check-input" type="checkbox" value="true" id="flexCheckCheckedDisabled" checked>
+      <label class="form-check-label" for="flexCheckCheckedDisabled">
+        Ativo
+      </label>
     </div>
 
-    <!-- Pedagogo -->
-    <div class="form-floating">
-        <select class="form-select" formControlName="genero" aria-label="Default select example">
-            <option value="masculino">Pedagogo1</option>
-            <option value="feminino">Pedagogo2</option>
-            <option value="outro">Pedagogo3</option>
-        </select>
-        <label for="floatingInputValue" class="label-select">Pedagogo</label>
-    </div>
-    
-    
+    <!-- Botões -->
     <div class="div-btn">
-        <button class="btn btn-dark">SALVAR ALTERAÇÕES</button>
+      <button type="submit" class="btn btn-dark">EDITAR</button>
+      <button type="submit" class="btn btn-dark">SALVAR</button>
+      <button type="submit" class="btn btn-delete">DELETAR</button>
     </div>
-</form>
+  </form>
+</div>

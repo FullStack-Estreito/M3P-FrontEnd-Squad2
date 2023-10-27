@@ -42,11 +42,11 @@ img {
   background-color: #f69c0b80;
 }
 
-.btn.btn-secondary:hover {
-  color: white;
-  border-color: #f69a0b;
-  background-color: #f69a0b
-}
+  .btn.btn-secondary:hover {
+    color: white;
+    border-color: #f69a0b;
+    background-color: #f69a0b
+  }
 
 .container-formularios {
   width: 100%;
@@ -56,8 +56,9 @@ img {
 @media (max-width: 986px) {
   .container-button {
     flex-direction: column;
-    align-items:  center;
+    align-items: center;
   }
+
   .btn.btn-secondary {
     padding-right: 50px;
     padding-left: 50px;

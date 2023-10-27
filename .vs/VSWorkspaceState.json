@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Frontend",
+    "\\Frontend\\src",
+    "\\Frontend\\src\\app",
+    "\\Frontend\\src\\app\\shared",
+    "\\Frontend\\src\\app\\shared\\components",
+    "\\Frontend\\src\\app\\shared\\components\\usuario",
+    "\\Frontend\\src\\app\\shared\\services",
+    "\\Frontend\\src\\app\\views",
+    "\\Frontend\\src\\app\\views\\login",
+    "\\Frontend\\src\\assets\\empresa"
+  ],
+  "SelectedNode": "\\Frontend\\src\\app\\views\\login\\LoginComponent.ts",
+  "PreviewInSolutionExplorer": false
+}

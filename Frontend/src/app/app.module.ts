@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -11,22 +12,24 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { AtendimentosComponent } from './shared/components/atendimentos/atendimentos.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EditComponent,
-    NotFoundComponent,
-   
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    RouterModule, 
-    ReactiveFormsModule, 
-    FormsModule, 
-    HttpClientModule, 
+    CommonModule,
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     NgxMaskDirective,
     NgxMaskPipe,
     PublicModule,

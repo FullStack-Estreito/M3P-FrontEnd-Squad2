@@ -30,14 +30,14 @@ export class UsuarioComponent implements OnInit {
   showFormularioEditar: boolean = false;
 
   formularioRegistro() {
-    this.showFormularioRegistro = !this.showFormularioRegistro;
+    this.showFormularioRegistro = this.showFormularioRegistro;
     if (this.showFormularioEditar === true) {
       this.showFormularioEditar = false;
     }
   }
 
   formularioEditar() {
-    this.showFormularioEditar = !this.showFormularioEditar;
+    this.showFormularioEditar = this.showFormularioEditar;
     if (this.showFormularioRegistro === true) {
       this.showFormularioRegistro = false;
     }

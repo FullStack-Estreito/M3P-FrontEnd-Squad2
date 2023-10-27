@@ -14,6 +14,6 @@ export class MenuComponent  {
   menuaberto = false;
 
   alterarEstadoMenu() {
-    this.menuaberto = !this.menuaberto
+    this.menuaberto = this.menuaberto
   }
 }
