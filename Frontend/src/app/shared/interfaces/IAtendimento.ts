@@ -7,4 +7,3 @@ export interface IAtendimento {
   pedagogo_Id: number;
   pedagogo_Nome: string;
 }
-

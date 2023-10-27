@@ -13,8 +13,6 @@ import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

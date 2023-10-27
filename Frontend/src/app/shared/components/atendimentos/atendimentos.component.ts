@@ -18,7 +18,6 @@ export class AtendimentosComponent implements OnInit {
   submitted = false;
   disBotao = this.frontService.atvBotao;
   registerForm!: FormGroup;
-  usuarios: Array<IUsuario> = [];
   endId = 0;
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
 
@@ -34,26 +33,6 @@ export class AtendimentosComponent implements OnInit {
     }
   }
 
-  formularioEditarAtendimento() {
-    this.showFormularioEditarAtendimento = this.showFormularioEditarAtendimento;
-    if (this.showFormularioBuscarAluno === true) {
-      this.showFormularioBuscarAluno = false;
-    }
-  }
-
-  Buscar() {
-    this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
-      this.usuarios = user;
-      console.log(user);
-    })
-  }
-
-  salvar() {
-    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
-      this.usuarios.push(user);
-      this.Buscar();
-    }));
-  }
   editar() {
     this.submitted = true;
     if (this.registerForm.invalid) {

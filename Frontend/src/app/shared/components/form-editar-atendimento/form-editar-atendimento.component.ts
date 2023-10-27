@@ -145,7 +145,5 @@ export class FormEditarAtendimentoComponent {
   get idEnd() {
     return this.registerForm.get('idEnd')!
   }
-=======
->>>>>>> origin/develop
 
 }

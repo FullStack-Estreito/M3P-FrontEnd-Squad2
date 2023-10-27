@@ -13,7 +13,6 @@ import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
-import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
 import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-editar-atendimento/form-editar-atendimento.component';
 import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
 import { FormCriarExercicioComponent } from 'src/app/shared/components/form-criar-exercicio/form-criar-exercicio.component';
@@ -30,7 +29,6 @@ import { FormEditarExercicioComponent } from 'src/app/shared/components/form-edi
     FormEditarUsuarioComponent,
     EnderecoComponent,
     AtendimentosComponent,
-    FormCriarAtendimentoComponent,
     FormEditarAtendimentoComponent,
     ExerciciosComponent,
     FormCriarExercicioComponent,
