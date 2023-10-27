@@ -1,33 +1,21 @@
 <div class="container">
+  <!-- Título da página -->
+  <h1 class="container-title">
+    Atendimentos
+    <img src="../../../../assets/atendimentos/atendimentos.svg" alt="Ícone atendimentos">
+  </h1>
 
-    <!-- Título da página -->
-    <h1 class="container-title">
-      Atendimentos
-      <img src="../../../../assets/atendimentos/atendimentos.svg" alt="Ícone atendimentos">
-    </h1>
 
+  <div class="container-button">
+    <!-- Botão de editar usuário -->
+    <button id="button-editer" class="btn btn-secondary" (click)="formularioEditarAtendimento()" type="button">
+      Editar um atendimento
+    </button>
+  </div>
 
-    <div class="container-button">
-      <!-- Botão de registrar novo usuário -->
-      <button id="button-register" class="btn btn-secondary" (click)="formularioRegistro()" type="button">
-        Registrar novo atendimento
-      </button>
+  <!-- Formulários -->
+  <ng-container *ngIf="showFormularioEditarAtendimento">
+    <app-form-editar-atendimento></app-form-editar-atendimento>
+  </ng-container>
 
-      <!-- Botão de editar usuário -->
-      <button id="button-editer" class="btn btn-secondary" (click)="formularioEditar()">
-        Editar um atendimento
-      </button>
-    </div>
-
-    <!-- Formulários -->
-    <div class="container-formularios">
-
-      <ng-container *ngIf="showFormularioRegistro">
-        <app-form-criar-atendimento></app-form-criar-atendimento>
-      </ng-container>
-
-      <ng-container *ngIf="showFormularioEditar">
-        <app-form-editar-atendimento></app-form-editar-atendimento>
-      </ng-container>
-
-    </div>
+</div>

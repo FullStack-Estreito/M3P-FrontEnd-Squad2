@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { AtendimentosComponent } from './shared/components/atendimentos/atendimentos.component';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { PrivateModule } from './views/private/private.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,

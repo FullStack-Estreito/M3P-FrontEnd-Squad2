@@ -81,7 +81,7 @@ export class FormBuscarAlunoComponent {
       })
     });
   }
-    
+
   EditarUsuario() {
     this.submitted = true;
     if (this.registerForm.invalid) {
