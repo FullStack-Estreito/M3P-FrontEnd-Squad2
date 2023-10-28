@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
 
 .toolbar {
-    position: absolute;
+    position: fixed;
     height: 62px;
     width: 100vw;
     top: 0;
@@ -20,7 +20,7 @@
 }
 
 .toolbar-titulo {
-    margin-left: 200px;
+    margin-left: 300px;
     margin-top: 16px;
     border-bottom: 3px solid black;
     padding-bottom: 11.5px;

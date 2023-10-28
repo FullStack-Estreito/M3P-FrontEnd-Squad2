@@ -17,6 +17,8 @@ import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-e
 import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
 import { FormCriarExercicioComponent } from 'src/app/shared/components/form-criar-exercicio/form-criar-exercicio.component';
 import { FormEditarExercicioComponent } from 'src/app/shared/components/form-editar-exercicio/form-editar-exercicio.component';
+import { ListagemUsuariosComponent } from 'src/app/shared/components/listagem-usuarios/listagem-usuarios.component';
+import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FormEditarExercicioComponent } from 'src/app/shared/components/form-edi
     FormEditarAtendimentoComponent,
     ExerciciosComponent,
     FormCriarExercicioComponent,
-    FormEditarExercicioComponent
+    FormEditarExercicioComponent,
+    ListagemUsuariosComponent,
+    DashboardComponent,
   ],
   providers: [provideNgxMask()],
   imports: [
