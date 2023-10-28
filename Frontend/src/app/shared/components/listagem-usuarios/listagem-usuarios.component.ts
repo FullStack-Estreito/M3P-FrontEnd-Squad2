@@ -77,6 +77,11 @@ export class ListagemUsuariosComponent {
     this.route.navigate(["private/usuarios"])
   }
 
+  // Função para navegar para a página de detalhamento aluno
+  redirecionarDetalhamento() {
+    this.route.navigate([`/private/detalhamento-aluno`])
+  }
+
   // Método para deletar usuário
   deletarUsuario(idUsuario: number) {
     this.listagemUsuariosService.deleteUsuario(idUsuario)

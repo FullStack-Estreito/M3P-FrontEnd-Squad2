@@ -9,5 +9,6 @@ export interface IAvaliacao {
     pontuacao_maxima: number,
     nota: number,
     professor_id: number,
-    aluno_id: number
+    aluno_id: number,
+    professor_nome: { nome: string }
 }
