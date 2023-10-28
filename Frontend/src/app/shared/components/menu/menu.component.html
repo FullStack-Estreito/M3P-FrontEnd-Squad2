@@ -1,28 +1,52 @@
-<div class="sidenav" [ngClass]="menuaberto ? 'sidenav-aberto': '' ">
+<div class="sidenav" [ngClass]="menuaberto ? 'sidenav-aberto' : ''">
   <div class="sidenav-container">
-
-    <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="menuaberto ? 'sidenav-aberto-button': '' ">
-      <img class="img-toggler" src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
-        style="height: 30px;">
+    <button
+      class="btn btn-link"
+      (click)="alterarEstadoMenu()"
+      [ngClass]="menuaberto ? 'sidenav-aberto-button' : ''"
+    >
+      <img
+        class="img-toggler"
+        src="../../../../assets/menu-icons/menu.svg"
+        alt="Ícone de abrir e fechar o menu"
+        style="height: 30px"
+      />
     </button>
 
     <!-- Lista de rotas -->
     <ul class="sidenav-links" *ngIf="menuaberto === true">
+      <li class="sidenav-links-item" routerLink="/private/home">
+        <a class="sidenav-nav-link">
+          <img
+            src="../../../../assets/menu-icons/dashboard.svg"
+            alt="Ícone menu"
+          />
+          Home
+        </a>
+      </li>
 
       <!-- Dashboard -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/dashboard.svg" alt="Ícone menu">
+          <img
+            src="../../../../assets/menu-icons/dashboard.svg"
+            alt="Ícone menu"
+          />
           Dashboard
         </a>
       </li>
 
       <!-- Usuários -->
       <li class="sidenav-links-item">
-        <a class="sidenav-nav-link" 
-        routerLinkActive="sidenav-nav-link-selecionado" 
-        routerLink="/private/usuarios">
-          <img src="../../../../assets/menu-icons/usuarios.svg" alt="Ícone menu">
+        <a
+          class="sidenav-nav-link"
+          routerLinkActive="sidenav-nav-link-selecionado"
+          routerLink="/private/usuarios"
+        >
+          <img
+            src="../../../../assets/menu-icons/usuarios.svg"
+            alt="Ícone menu"
+          />
           Usuários
         </a>
       </li>
@@ -30,7 +54,10 @@
       <!-- Atendimentos -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/atendimentos.svg" alt="Ícone menu">
+          <img
+            src="../../../../assets/menu-icons/atendimentos.svg"
+            alt="Ícone menu"
+          />
           Atendimentos
         </a>
       </li>
@@ -38,7 +65,10 @@
       <!-- Exercícios -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/exercicios.svg" alt="Ícone menu">
+          <img
+            src="../../../../assets/menu-icons/exercicios.svg"
+            alt="Ícone menu"
+          />
           Exercícios
         </a>
       </li>
@@ -46,7 +76,10 @@
       <!-- Avaliações -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/avaliacoes.svg" alt="Ícone menu">
+          <img
+            src="../../../../assets/menu-icons/avaliacoes.svg"
+            alt="Ícone menu"
+          />
           Avaliações
         </a>
       </li>
@@ -54,7 +87,7 @@
       <!-- Avaliações -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/logs.svg" alt="Ícone menu">
+          <img src="../../../../assets/menu-icons/logs.svg" alt="Ícone menu" />
           Logs
         </a>
       </li>
@@ -62,26 +95,41 @@
       <!-- Detalhamento aluno -->
       <li class="sidenav-links-item">
         <a class="sidenav-nav-link">
-          <img src="../../../../assets/menu-icons/detalhamento-aluno.svg" alt="Ícone menu" style="margin-bottom: 1px;">
+          <img
+            src="../../../../assets/menu-icons/detalhamento-aluno.svg"
+            alt="Ícone menu"
+            style="margin-bottom: 1px"
+          />
           Detalhamento aluno
         </a>
       </li>
 
       <!-- Empresa -->
-      <li class="sidenav-links-item">
-        <a class="sidenav-nav-link"
-        routerLinkActive="sidenav-nav-link-selecionado" 
-        routerLink="/private/empresa">
-          <img src="../../../../assets/menu-icons/empresa.svg" alt="Ícone menu" style="margin-bottom: 1px;">
+      <li class="sidenav-links-item" disabled="true">
+        <a
+          class="sidenav-nav-link"
+          routerLinkActive="sidenav-nav-link-selecionado"
+          routerLink="/private/empresa"
+        >
+          <img
+            src="../../../../assets/menu-icons/empresa.svg"
+            alt="Ícone menu"
+            style="margin-bottom: 1px"
+          />
           Empresa
         </a>
       </li>
     </ul>
 
     <!-- Botão logout -->
-    <button *ngIf="menuaberto === true" type="button" class="btn btn-outline-light" id="btn-sair">
+    <button
+      (click)="LogOut()"
+      *ngIf="menuaberto === true"
+      type="button"
+      class="btn btn-outline-light"
+      id="btn-sair"
+    >
       <i class="bi bi-arrow-left-circle-fill"></i>Sair
     </button>
-
   </div>
 </div>

@@ -1,4 +1,7 @@
-<!-- <div *ngIf="usuario">
-  <app-usuario [usuarioData]="usuario"></app-usuario>
- </div> -->
-<!-- <h1>EDITAR</h1> -->
+<h1>EDITAR</h1>
+<div *ngIf="usuario">
+  <app-form-criar-usuario
+    [usuarioData]="usuario"
+    [endData]="end"
+  ></app-form-criar-usuario>
+</div>

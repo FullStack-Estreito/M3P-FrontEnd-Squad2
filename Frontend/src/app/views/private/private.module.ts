@@ -12,6 +12,7 @@ import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-
 import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { EditComponent } from 'src/app/shared/components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     UsuarioComponent,
     FormCriarUsuarioComponent,
     FormEditarUsuarioComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    EditComponent
   ],
   providers: [provideNgxMask()],
   imports: [

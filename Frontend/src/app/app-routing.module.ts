@@ -11,14 +11,6 @@ const routes: Routes = [
 
 ]
 
-// { path: 'usuario', component: UsuarioComponent },
-// { path: 'endereco', component: EnderecoComponent },
-//   { path: '', component: HomeComponent },
-//   { path: 'edit/:id', component: EditComponent },
-//   { path: '**', component: NotFoundComponent }
-
-
-
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],

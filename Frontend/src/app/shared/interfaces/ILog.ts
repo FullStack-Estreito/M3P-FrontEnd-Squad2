@@ -1,6 +1,7 @@
 export interface ILog {
   id: number;
-  usuario: string;
+  usuario_Id: number;
+  nome: string;
   acao: string;
   detalhes: string;
   data: Date;

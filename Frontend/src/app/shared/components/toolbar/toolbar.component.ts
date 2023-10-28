@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
+  constructor() {
+  }
+
+  nome =  sessionStorage.getItem('user');
 }

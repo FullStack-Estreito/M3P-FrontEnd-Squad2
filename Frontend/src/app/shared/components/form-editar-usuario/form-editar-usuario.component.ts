@@ -41,31 +41,31 @@ export class FormEditarUsuarioComponent {
     }
   }
 
-  BuscarEnderecos() {
-    this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.frontService.id_Endereco);
-      console.log(user.length);
-      for (let i = 0; i < this.enderecos.length; i++) {
-        if (this.enderecos[i].id > this.endId) {
-          this.endId = this.enderecos[i].id;
-        }
-      }
-    });
-  }
+  // BuscarEnderecos() {
+  //   this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
+  //     this.enderecos = user;
+  //     console.log(this.frontService.id_Endereco);
+  //     console.log(user.length);
+  //     for (let i = 0; i < this.enderecos.length; i++) {
+  //       if (this.enderecos[i].id > this.endId) {
+  //         this.endId = this.enderecos[i].id;
+  //       }
+  //     }
+  //   });
+  // }
 
-  Buscar() {
-    this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
-      this.usuarios = user;
-      console.log(user);
-    })
-  }
+  // Buscar() {
+  //   this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
+  //     this.usuarios = user;
+  //     console.log(user);
+  //   })
+  // }
 
 
   salvar() {
-    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
+    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario", 'gggg').subscribe((user => {
       this.usuarios.push(user);
-      this.Buscar();
+      // this.Buscar();
     }));
   }
   editar() {
@@ -84,7 +84,7 @@ export class FormEditarUsuarioComponent {
     this.frontService.del(this.frontService.idDelete).subscribe(user => {
       this.usuarios.push(user);
       alert("deletado");
-      this.Buscar();
+      // this.Buscar();
     });
   }
 
@@ -111,7 +111,7 @@ export class FormEditarUsuarioComponent {
   }
 
   ngOnInit(): void {
-    this.BuscarEnderecos();
+    // this.BuscarEnderecos();
     this.registerForm = this.formBuilder.group({
       id: [0],
       nome: ['', [Validators.required]],

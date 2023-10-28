@@ -7,10 +7,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './shared/components/home/home.component';
-import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { LogsComponent } from './shared/components/logs/logs.component';
 
 
 
@@ -19,16 +19,18 @@ import { PrivateModule } from './views/private/private.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LogsComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    RouterModule, 
-    ReactiveFormsModule, 
-    FormsModule, 
-    HttpClientModule, 
+    AppRoutingModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     NgxMaskDirective,
     NgxMaskPipe,
     PublicModule,

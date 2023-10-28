@@ -104,6 +104,7 @@
         type="text"
         class="form-control"
         formControlName="nome"
+        placeholder="nome"
         id="floatingInputValue"
       />
       <label for="floatingInputValue">Nome</label>
@@ -119,22 +120,22 @@
             formControlName="genero"
             aria-label="Default select example"
           >
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
           </select>
         </div>
       </div>
       <!-- Tipo -->
       <div class="col-md">
         <div class="form-floating">
-          <label class="label-select" for="floatingInputValue">Tipo</label>
-          <select class="form-select" formControlName="tipo">
-            <option value="administrador">Administrador</option>
-            <option value="pedagogo">Pedagogo</option>
-            <option value="professor">Professor</option>
-            <option value="aluno">Aluno</option>
+          <select class="form-select" formControlName="tipo" placeholder="kkk">
+            <option value="Administrador">Administrador</option>
+            <option value="Pedagogo">Pedagogo</option>
+            <option value="Professor">Professor</option>
+            <option value="Aluno">Aluno</option>
           </select>
+          <label class="label-select" for="floatingInputValue">Tipo</label>
         </div>
       </div>
     </div>
@@ -147,6 +148,7 @@
             type="text"
             class="form-control"
             formControlName="cpf"
+            placeholder="cpf"
             mask="000.000.000-00"
             id="floatingInputValue"
           />
@@ -163,6 +165,7 @@
             }"
             type="text"
             formControlName="telefone"
+            placeholder="telefone"
             class="form-control"
             mask="(00) 0 0000-0000"
             id="floatingInputValue"
@@ -179,6 +182,7 @@
           <input
             type="email"
             formControlName="email"
+            placeholder="email"
             class="form-control"
             id="floatingInputValue"
           />
@@ -206,6 +210,7 @@
           <div class="form-floating">
             <input
               type="text"
+              placeholder="kkk"
               formControlName="codigo_Registro_Professor"
               class="form-control"
               id="floatingInputValue"
@@ -219,6 +224,7 @@
         <div class="form-floating">
           <input
             type="text"
+            placeholder="kkk"
             class="form-control"
             formControlName="matricula_Aluno"
             id="floatingInputValue"
@@ -247,3 +253,14 @@
     <button (click)="OnSubmitUser()" class="btn btn-dark">REGISTRAR</button>
   </div>
 </div>
+
+<button class="btn btn-primary" [disabled]="disBotao" (click)="OnSubmitUser()">
+  CADASTRAR
+</button>
+<button class="btn btn-warning" [disabled]="!disBotao" (click)="EditUser()">
+  EDITAR
+</button>
+
+<button class="btn btn-danger" [disabled]="!disBotao" (click)="ExcluirUser()">
+  EXCLUIR
+</button>

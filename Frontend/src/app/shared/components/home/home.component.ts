@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
     this.Buscar();
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   Buscar() {
@@ -31,15 +30,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  Detalhes(id: number) {
+  Detalhes(id: number, idEndereco: number) {
     this.frontService.idDetail = id;
+    this.frontService.idDetailEnd = idEndereco;
     this.frontService.boolEditar = true;
     this.frontService.atvBotao = true;
-    this.router.navigate([`/edit/${id}`])
+    this.router.navigate([`private/edit/${id}`])
   }
-
-
-
 
 
 }

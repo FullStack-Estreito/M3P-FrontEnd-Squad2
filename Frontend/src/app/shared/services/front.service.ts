@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
 import { IEndereco } from '../interfaces/IEndereco';
@@ -16,10 +16,10 @@ export class FrontService {
   atvBotao = false;
   boolEditar = false;
   idDetail = 0;
+  idDetailEnd = 0;
   enderecos: Array<IEndereco> = [];
   usuarios: Array<IUsuario> = [];
   apiBackBase = "http://localhost:5009"
-
   id_Endereco: number = this.enderecos.length;
 
   getCep(cep: string): Observable<any> {
@@ -30,8 +30,26 @@ export class FrontService {
     return this.http.get<[]>(`${this.apiBackBase}/${endpoint}`);
   }
 
-  add(usuario: any, t: any, endpoint: string): Observable<typeof t> {
-    return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario);
+
+  // getAll(endpoint: string, tipo: any, token: any): Observable<typeof tipo[]> {
+  //   return this.http.get<[]>(`${this.apiBackBase}/${endpoint}`,
+  //     {
+  //       headers: new HttpHeaders({
+  //         'Content-Type': 'application/json',
+  //         "Authorization": `Bearer ${token}`
+  //       })
+  //     }
+  //   );
+  // }
+
+  add(usuario: any, t: any, endpoint: string, token: any): Observable<typeof t> {
+    return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario,
+      {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${token}`
+        })
+      });
   }
 
   edit(usuario: any, id: number): Observable<IUsuario> {
@@ -45,10 +63,8 @@ export class FrontService {
     return this.http.delete<IUsuario>(`${this.apiBackBase}/DeletarUsuario/${id}`)
   }
 
-  sign(login: ILogin): Observable<ILogin> {
-    return this.http.post<ILogin>(`${this.apiBackBase}/Login`, login)
+  sigin(login: any): Observable<any> {
+    return this.http.post<any>(`${this.apiBackBase}/Login`, login)
   }
-
-
 
 }

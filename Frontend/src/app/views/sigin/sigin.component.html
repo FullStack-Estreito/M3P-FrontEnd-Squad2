@@ -5,26 +5,35 @@
     <form [formGroup]="registerForm" class="form">
       <div class="form-floating">
         <input
-          [ngClass]="{'is-invalid': submitted && registerForm.controls?.['email']?.errors}"
           type="email"
-          forControlName="email"
+          formControlName="email"
           class="form-control"
           id="floatingInputValue"
-          placeholder="Usuário"
         />
-        <label for="floatingInputValue">Usuário</label>
+        <label for="floatingInputValue">Email</label>
       </div>
 
       <div class="form-floating">
         <input
-          type="password"
+          type="text"
           formControlName="senha"
           class="form-control"
           id="floatingInputValue"
-          placeholder="S"
+          placeholder="senha"
         />
         <label for="floatingInputValue">Senha</label>
       </div>
+<!--
+      <div class="col-md">
+        <div class="form-floating">
+          <label class="label-select" for="floatingInputValue">Tipo</label>
+          <select class="form-select" formControlName="tipo">
+            <option value="administrador">administrador</option>
+            <option value="pedagogo">pedagogo</option>
+            <option value="professor">professor</option>
+          </select>
+        </div>
+      </div> -->
     </form>
     <button class="btn btn-success w-100" (click)="OnSubmit()">Entrar</button>
 
@@ -45,7 +54,6 @@
   </div>
 </div>
 
-<!-- Modal -->
 <div
   class="modal fade"
   id="exampleModal"

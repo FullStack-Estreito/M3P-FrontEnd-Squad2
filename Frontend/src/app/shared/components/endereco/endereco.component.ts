@@ -32,13 +32,13 @@ export class EnderecoComponent implements OnInit {
   }
 
   idEndereco = this.frontService.id_Endereco;
-  salvarCep() {
-    this.frontService.add(this.registerForm.value, this.enderecos, "CriarEndereco").subscribe(ends => {
-      this.enderecos.push(ends);
-      this.frontService.id_Endereco = ends.id;
-      console.log("Id do endereço: " + this.frontService.id_Endereco)
-    });
-  }
+  // salvarCep() {
+  //   this.frontService.add(this.registerForm.value, this.enderecos, "CriarEndereco").subscribe(ends => {
+  //     this.enderecos.push(ends);
+  //     this.frontService.id_Endereco = ends.id;
+  //     console.log("Id do endereço: " + this.frontService.id_Endereco)
+  //   });
+  // }
 
   OnSubmit() {
     this.submitted = true;
@@ -46,7 +46,7 @@ export class EnderecoComponent implements OnInit {
       return;
     } else {
       alert("endereco salvo com sucesso");
-      this.salvarCep();
+      // this.salvarCep();
 
     }
   }

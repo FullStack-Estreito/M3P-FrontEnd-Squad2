@@ -12,7 +12,7 @@ import { FrontService } from 'src/app/shared/services/front.service';
   templateUrl: './usuario.component.html',
   styleUrls: ['./usuario.component.css']
 })
-export class UsuarioComponent implements OnInit {
+export class UsuarioComponent {
 
   @Input() usuarioData: IUsuario | null = null;
 
@@ -21,15 +21,25 @@ export class UsuarioComponent implements OnInit {
   disBotao = this.frontService.atvBotao;
   registerForm!: FormGroup;
   usuarios: Array<IUsuario> = [];
-  endId = 0;
+  tipoUsuario = sessionStorage.getItem('user');
+  disableBotao = true;
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
+    // this.NP()
 
   }
 
   showFormularioRegistro: boolean = false;
   showFormularioEditar: boolean = false;
 
+  NP() {
+    if (this.tipoUsuario !== 'aluno')
+      this.disableBotao = false
+  }
+
+
+
   formularioRegistro() {
+
     this.showFormularioRegistro = !this.showFormularioRegistro;
     if (this.showFormularioEditar === true) {
       this.showFormularioEditar = false;
@@ -43,104 +53,104 @@ export class UsuarioComponent implements OnInit {
     }
   }
 
-  BuscarEnderecos() {
-    this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.frontService.id_Endereco);
-      console.log(user.length);
-      for (let i = 0; i < this.enderecos.length; i++) {
-        if (this.enderecos[i].id > this.endId) {
-          this.endId = this.enderecos[i].id;
-        }
-      }
-    });
-  }
+  // BuscarEnderecos() {
+  //   this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
+  //     this.enderecos = user;
+  //     console.log(this.frontService.id_Endereco);
+  //     console.log(user.length);
+  //     for (let i = 0; i < this.enderecos.length; i++) {
+  //       if (this.enderecos[i].id > this.endId) {
+  //         this.endId = this.enderecos[i].id;
+  //       }
+  //     }
+  //   });
+  // }
 
-  Buscar() {
-    this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
-      this.usuarios = user;
-      console.log(user);
-    })
-  }
+  // Buscar() {
+  //   this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
+  //     this.usuarios = user;
+  //     console.log(user);
+  //   })
+  // }
 
 
-  salvar() {
-    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
-      this.usuarios.push(user);
-      this.Buscar();
-    }));
-  }
-  editar() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else
-      this.frontService.edit(this.registerForm.value, this.frontService.idDelete).subscribe(user => {
-        this.usuarios.push(user);
-      });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/']);
-  }
+  // salvar() {
+  //   this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
+  //     this.usuarios.push(user);
+  //     // this.Buscar();
+  //   }));
+  // }
+  // editar() {
+  //   this.submitted = true;
+  //   if (this.registerForm.invalid) {
+  //     return;
+  //   } else
+  //     this.frontService.edit(this.registerForm.value, this.frontService.idDelete).subscribe(user => {
+  //       this.usuarios.push(user);
+  //     });
+  //   this.frontService.boolEditar = false;
+  //   this.router.navigate(['/']);
+  // }
 
-  excluir() {
-    this.frontService.del(this.frontService.idDelete).subscribe(user => {
-      this.usuarios.push(user);
-      alert("deletado");
-      this.Buscar();
-    });
-  }
+  // excluir() {
+  //   this.frontService.del(this.frontService.idDelete).subscribe(user => {
+  //     this.usuarios.push(user);
+  //     alert("deletado");
+  //     // this.Buscar();
+  //   });
+  // }
 
-  OnSubmit() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else {
-      this.salvar();
-      this.router.navigate(['/'])
-    }
-  }
+  // OnSubmit() {
+  //   this.submitted = true;
+  //   if (this.registerForm.invalid) {
+  //     return;
+  //   } else {
+  //     this.salvar();
+  //     this.router.navigate(['/'])
+  //   }
+  // }
 
-  EditarUsuario() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else
-      this.frontService.edit(this.registerForm.value, this.frontService.idDetail).subscribe(user => {
-        this.frontService.usuarios.push(user);
-      });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/home']);
-  }
+  // EditarUsuario() {
+  //   this.submitted = true;
+  //   if (this.registerForm.invalid) {
+  //     return;
+  //   } else
+  //     this.frontService.edit(this.registerForm.value, this.frontService.idDetail).subscribe(user => {
+  //       this.frontService.usuarios.push(user);
+  //     });
+  //   this.frontService.boolEditar = false;
+  //   this.router.navigate(['/home']);
+  // }
 
-  ngOnInit(): void {
-    // this.BuscarEnderecos();
-    // this.registerForm = this.formBuilder.group({
-    //   id: [0],
-    //   nome: ['', [Validators.required]],
-    //   email: ['', [Validators.required]],
-    //   cpf: ['', [Validators.required]],
+  // ngOnInit(): void {
+  // this.BuscarEnderecos();
+  // this.registerForm = this.formBuilder.group({
+  //   id: [0],
+  //   nome: ['', [Validators.required]],
+  //   email: ['', [Validators.required]],
+  //   cpf: ['', [Validators.required]],
 
-    //   cep: ['', [Validators.required]],
+  //   cep: ['', [Validators.required]],
 
-    //   telefone: ["2222222211"],
-    //   genero: ["male"],
-    //   tipo: ["admin"],
-    //   status_sistema: [true],
-    //   senha: ["12345676"],
-    //   matricula_Aluno: ["12345"],
-    //   codigo_Registro_Professor: [1],
-    //   endereco_Id: [this.registerForm.get('idEnd')?.value],
-    //   empresa_Id: [1],
+  //   telefone: ["2222222211"],
+  //   genero: ["male"],
+  //   tipo: ["admin"],
+  //   status_sistema: [true],
+  //   senha: ["12345676"],
+  //   matricula_Aluno: ["12345"],
+  //   codigo_Registro_Professor: [1],
+  //   endereco_Id: [this.registerForm.get('idEnd')?.value],
+  //   empresa_Id: [1],
 
-    //   idEnd: [0],
-    //   localidade: [''],
-    //   logradouro: [''],
-    //   bairro: [''],
-    //   uf: [''],
-    //   numero: [''],
-    //   complemento: ['']
-    // });
-  }
+  //   idEnd: [0],
+  //   localidade: [''],
+  //   logradouro: [''],
+  //   bairro: [''],
+  //   uf: [''],
+  //   numero: [''],
+  //   complemento: ['']
+  // });
+  // }
 
 
 }

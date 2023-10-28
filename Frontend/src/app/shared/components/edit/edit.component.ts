@@ -2,6 +2,7 @@ import { FrontService } from '../../services/front.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
+import { IEndereco } from '../../interfaces/IEndereco';
 
 @Component({
   selector: 'app-edit',
@@ -10,15 +11,31 @@ import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 })
 export class EditComponent {
 
-  usuarios: Array<IUsuario> = [];
   usuario!: IUsuario;
+  end!: IEndereco;
   constructor(private router: ActivatedRoute, private route: Router, private frontService: FrontService) {
+    frontService.atvBotao = true;
   }
+  BuscaCep() {
+    this.frontService.getCep(this.end.cep).subscribe((ceps => {
+      this.end = ceps;
+    }))
+  }
+  endi: Array<IEndereco> = []
 
-  ngOnInit(): void {
+  PreencheForm() {
     const id = Number(this.router.snapshot.paramMap.get("id"))
-    this.frontService.getId(id, "usuarios", this.frontService.usuarios).subscribe((item) => {
+    this.frontService.getId(id, "obterUsuarioPorId", this.frontService.usuarios).subscribe((item) => {
       this.usuario = item;
     });
+
   }
-}
+  ngOnInit(): void {
+    this.PreencheForm();
+    this.frontService.getId(this.frontService.idDetailEnd , 'obterEndPorId', this.frontService.enderecos).subscribe((itemEnd) => {
+      this.end = itemEnd;
+      console.log(itemEnd);
+    });
+  }
+  }
+
