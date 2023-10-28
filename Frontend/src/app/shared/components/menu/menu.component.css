@@ -7,11 +7,12 @@ body {
 .sidenav {
   position: fixed;
   top: 62px;
-  background-color: #cccccc;
+  background-color: white;
   transition: all 0.5s ease; 
   z-index: 2;
   min-height: 92vh;
   width: 100px;
+  box-shadow: 8px 20px 12px 3px rgba(215, 222, 227, 0.39);
 }
 
 .sidenav-aberto {
@@ -62,10 +63,11 @@ body {
 }
 
 .sidenav-nav-link-selecionado {
-  background-color: rgba(255, 255, 255, 0.521);
+  border: 1px solid #103A57;
   font-weight: 500;
   padding: 8px 6px;
   border-radius: 8px;
+  background: #F9F9FA;
 }
 
 #btn-sair {
