@@ -7,6 +7,7 @@ import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.c
 import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
 import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
 import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboard.component';
+import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamento-aluno/detalhamento-aluno.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuarioComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'atendimentos', component: AtendimentosComponent },
-      { path: 'exercicios', component: ExerciciosComponent }
+      { path: 'exercicios', component: ExerciciosComponent },
+      { path: 'detalhamento-aluno', component: DetalhamentoAlunoComponent},
     ]
   }
 ];

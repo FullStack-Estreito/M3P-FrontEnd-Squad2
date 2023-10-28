@@ -19,6 +19,7 @@ import { FormCriarExercicioComponent } from 'src/app/shared/components/form-cria
 import { FormEditarExercicioComponent } from 'src/app/shared/components/form-editar-exercicio/form-editar-exercicio.component';
 import { ListagemUsuariosComponent } from 'src/app/shared/components/listagem-usuarios/listagem-usuarios.component';
 import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboard.component';
+import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamento-aluno/detalhamento-aluno.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboar
     FormEditarExercicioComponent,
     ListagemUsuariosComponent,
     DashboardComponent,
+    DetalhamentoAlunoComponent
   ],
   providers: [provideNgxMask()],
   imports: [

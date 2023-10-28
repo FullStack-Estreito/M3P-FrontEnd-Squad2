@@ -48,7 +48,8 @@
             </div>
 
             <!-- Link "Ver mais" -->
-            <a *ngIf="user.tipo == 'Aluno'"
+            <a routerLink="/private/detalhamento-aluno"
+            *ngIf="user.tipo == 'Aluno'"
             class="container-cards-user-card-detalhamento"
             href="#">
                 Ver mais
