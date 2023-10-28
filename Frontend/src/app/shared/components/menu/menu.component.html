@@ -1,4 +1,3 @@
-<!--<div class="sidenav" [ngClass]="menuaberto 'sidenav-aberto': '' "> -->
 <!--<div class="sidenav-container"> -->
 <div class="sidenav" [ngClass]="{'sidenav-aberto': menuaberto}">
   <div class="sidenav-container">
@@ -12,7 +11,7 @@
 
       <!-- Dashboard -->
       <li class="sidenav-links-item">
-        <a class="sidenav-nav-link">
+        <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" routerLink="/private/dashboard">
           <img src="../../../../assets/menu-icons/dashboard.svg" alt="Ícone menu">
           Dashboard
         </a>
