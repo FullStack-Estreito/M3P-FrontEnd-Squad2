@@ -10,11 +10,9 @@ import { IEndereco } from '../../interfaces/IEndereco';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent {
-
   usuario!: IUsuario;
   end!: IEndereco;
   constructor(private router: ActivatedRoute, private route: Router, private frontService: FrontService) {
-    frontService.atvBotao = true;
   }
   BuscaCep() {
     this.frontService.getCep(this.end.cep).subscribe((ceps => {
@@ -24,7 +22,7 @@ export class EditComponent {
   endi: Array<IEndereco> = []
 
   PreencheForm() {
-    const id = Number(this.router.snapshot.paramMap.get("id"))
+    const id = Number(this.router.snapshot.paramMap.get("id"));
     this.frontService.getId(id, "obterUsuarioPorId", this.frontService.usuarios).subscribe((item) => {
       this.usuario = item;
     });
@@ -32,10 +30,11 @@ export class EditComponent {
   }
   ngOnInit(): void {
     this.PreencheForm();
-    this.frontService.getId(this.frontService.idDetailEnd , 'obterEndPorId', this.frontService.enderecos).subscribe((itemEnd) => {
+    const idEnd = Number(this.router.snapshot.paramMap.get("idEnd"))
+    this.frontService.getId(idEnd, 'obterEndPorId', this.frontService.enderecos).subscribe((itemEnd) => {
       this.end = itemEnd;
-      console.log(itemEnd);
     });
+    this.BuscaCep();
   }
-  }
+}
 

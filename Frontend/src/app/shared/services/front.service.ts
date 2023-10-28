@@ -67,4 +67,7 @@ export class FrontService {
     return this.http.post<any>(`${this.apiBackBase}/Login`, login)
   }
 
+  addLog(usuario: any, t: any, endpoint: string): Observable<typeof t> {
+    return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario)
+  }
 }

@@ -6,6 +6,7 @@ import { UsuarioComponent } from 'src/app/shared/components/usuario/usuario.comp
 import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { HomeComponent } from 'src/app/shared/components/home/home.component';
 import { EditComponent } from 'src/app/shared/components/edit/edit.component';
+import { LogsComponent } from 'src/app/shared/components/logs/logs.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuarioComponent },
       { path: 'endereco', component: EnderecoComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'edit/:id', component: EditComponent }
+      { path: 'log', component: LogsComponent },
+      { path: 'edit/:id/:idEnd', component: EditComponent }
     ]
   }
 ];

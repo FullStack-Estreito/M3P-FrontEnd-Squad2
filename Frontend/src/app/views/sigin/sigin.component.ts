@@ -37,15 +37,15 @@ export class SiginComponent implements OnInit {
       }
     }
     if (this.usuarios[index].senha == this.registerForm.get('senha')?.value) {
-      sessionStorage.setItem('user', this.usuarios[index].tipo);
+      sessionStorage.setItem('userTipo', this.usuarios[index].tipo);
+      sessionStorage.setItem('userNome', this.usuarios[index].nome);
+      sessionStorage.setItem('userId', this.usuarios[index].id.toString())
       return true;
     }
     else {
       return false;
     }
   }
-
-
 
   async Logar() {
     this.frontService.sigin(this.registerForm.value).subscribe(login => {
