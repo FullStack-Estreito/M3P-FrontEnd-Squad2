@@ -16,6 +16,6 @@ export interface IUsuario {
   numero: string,
   complemento: string,
   bairro: string,
-  ponto_Referência: string,
+  ponto_Referencia: string,
   empresa_Id: number
 }
