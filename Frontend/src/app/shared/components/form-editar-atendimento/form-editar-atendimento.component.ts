@@ -50,7 +50,7 @@ export class FormEditarAtendimentoComponent implements OnInit {
       if (this.atendimentoIdString !== null) {
         this.atendimentoIdNumber = parseInt(this.atendimentoIdString)
       }
-      console.log('ID da URL:', this.atendimentoIdNumber);
+
     });
 
     this.getAlunos();
@@ -112,7 +112,6 @@ export class FormEditarAtendimentoComponent implements OnInit {
   }
 
   editarAtendimento(){
-
     const aluno = this.editarForm.get('aluno')?.value
     const pedagogo = this.editarForm.get('pedagogo')?.value
     const descricao = this.editarForm.get('descricao')?.value
