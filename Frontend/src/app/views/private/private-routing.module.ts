@@ -8,6 +8,8 @@ import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/at
 import { ExerciciosComponent } from 'src/app/shared/components/exercicios/exercicios.component';
 import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboard.component';
 import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamento-aluno/detalhamento-aluno.component';
+import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-editar-atendimento/form-editar-atendimento.component';
+import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
       { path: 'empresa', component: EmpresaComponent },
       { path: 'usuarios', component: UsuarioComponent },
       { path: 'endereco', component: EnderecoComponent },
+      { path: 'editar-atendimento/:id', component: FormEditarAtendimentoComponent},
+      { path: 'criar-atendimento', component: FormCriarAtendimentoComponent},
       { path: 'atendimentos', component: AtendimentosComponent },
       { path: 'exercicios', component: ExerciciosComponent },
       { path: 'detalhamento-aluno', component: DetalhamentoAlunoComponent},
