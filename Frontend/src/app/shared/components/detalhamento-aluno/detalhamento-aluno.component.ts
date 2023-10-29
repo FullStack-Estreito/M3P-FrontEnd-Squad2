@@ -22,7 +22,6 @@ export class DetalhamentoAlunoComponent {
     this.detalhamentoAlunoService.getAluno(this.aluno_id)
       .subscribe((result) => {
         this.aluno = result
-        console.log(this.aluno.ponto_Referencia)
 
         if (this.aluno.matricula_Aluno == undefined) {
           this.aluno.matricula_Aluno = "-"
@@ -93,6 +92,7 @@ export class DetalhamentoAlunoComponent {
   getExercicios() {
     this.detalhamentoAlunoService.getExercicios()
       .subscribe((result) => {
+        console.log(this.exercicios)
         this.exercicios = result.filter((exercicio => exercicio.aluno_id === 1))
       });
   }
