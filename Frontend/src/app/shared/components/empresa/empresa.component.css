@@ -1,53 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
-
 .container {
     width: 90%;
     margin: 0px;
-}
-
-.titulo {
-    font-family: 'Nunito', sans-serif;
+  }
+  
+  .container-title {
     font-size: 16px;
-    letter-spacing: 26x;
-    font-weight: 500;
-    color: #172c3c;
+    font-weight: 300;
+    color: white;
     padding: 20px;
     width: 100%;
-    background-color: #00858569;
+    background-color: #103A57;
     border: 0.7px solid black;
     border-radius: 8px;
-}
+    margin-bottom: 30px;
+  }
+  
+  .form-floating {
+    margin-bottom: 20px;
+  }
 
-.icone-titulo {
-    margin-left: 5px;
-}
-
-.form {
-    width: 100%;
-    margin-top: 35px;
-}
-
-.form-floating {
-    margin-top: 20px;
-}
-
-.form-control {
-    font-size: 14px;
-    font-family: 'Nunito', sans-serif;
-}
-
-.div-btn {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.btn.btn-dark {
-    font-size: 14px;
-    font-family: 'Nunito', sans-serif;
-    background-color: #4eaa0c;
-    border-color: #4eaa0c;
-    margin-top: 20px;
-    margin-right: 5px;
-    padding-right: 25px;
-    padding-left: 25px;
-}
+  input, textarea {
+    font-size: 13px;
+  }
+  
+  .mensagem-erro {
+    font-size: 13px;
+    color: red;
+    margin-left: 10px;
+  
+  }
+  
+  #btn-salvar {
+    margin-top: 30px;
+    border-radius: 22px;
+    font-size: 13px;
+    box-shadow: 0px 0px 10px 0px rgba(95, 100, 104, 0.39);
+  }
