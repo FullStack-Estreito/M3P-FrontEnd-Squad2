@@ -106,6 +106,10 @@ section {
     
 }
 
+.container-cards {
+    display: flex;
+    justify-content: flex-start;
+}
 .container-cards-card {
     display: flex;
     flex-direction: column;
