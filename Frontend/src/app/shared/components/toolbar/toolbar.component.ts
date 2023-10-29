@@ -11,7 +11,9 @@ export class ToolbarComponent {
 
   nomeEmpresa: string = ''
   logo: string = ''
+  usuarioId: string | undefined 
   usuario: string = ''
+
 
   constructor(private empresaService: EmpresaService,
     private userService: DetalhamentoAlunoService) {}
@@ -31,9 +33,20 @@ export class ToolbarComponent {
   }
 
   getDadosUser(){
-    this.userService.getAluno(1)
+    const id = sessionStorage.getItem('userId');
+
+    if (id !== null) {
+      this.usuarioId = id;
+    } else {
+      this.usuarioId = '';
+    }
+
+    const idNumber = parseInt(this.usuarioId)
+    this.userService.getAluno(idNumber)
     .subscribe((result) => {
       this.usuario = result.nome
     })
   }
 }
+
+

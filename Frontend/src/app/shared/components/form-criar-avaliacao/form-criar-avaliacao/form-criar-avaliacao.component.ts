@@ -10,7 +10,8 @@ import { ListagemUsuariosService } from 'src/app/shared/services/listagem-usuari
   styleUrls: ['./form-criar-avaliacao.component.css']
 })
 export class FormCriarAvaliacaoComponent {
- alunos: any[] = []
+
+  alunos: any[] = []
   professores: any[] = []
   registrarForm: FormGroup
 
@@ -60,7 +61,7 @@ export class FormCriarAvaliacaoComponent {
       "descricao": descricao,
       "materia": materia,
       "data": dataFormatada,
-      "pontuacao_maxima": notaMaxima,
+      "pontuacao_Maxima": notaMaxima,
       "nota": nota,
       "professor_id": alunoNumber,
       "aluno_id": professorNumber,

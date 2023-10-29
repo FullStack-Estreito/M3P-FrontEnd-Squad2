@@ -11,7 +11,7 @@
             <select class="form-select" formControlName="aluno" name="aluno" id="aluno">
                 <option selected>Selecione</option>
                 <option *ngFor="let aluno of alunos" [value]="aluno.id">
-                    {{aluno.nome}}
+                    {{aluno.aluno_nome.nome}} 
                 </option>
             </select>
             <label for="aluno">Aluno</label>
@@ -25,7 +25,7 @@
             <select class="form-select" formControlName="professor" name="professor" id="professor">
                 <option selected>Selecione</option>
                 <option *ngFor="let professor of professores" [value]="professor.id">
-                    {{professor.nome}}
+                    {{professor.professor_nome.nome}}
                 </option>
             </select>
             <label for="aluno">Prrofessor</label>

@@ -62,6 +62,7 @@ export class DetalhamentoAlunoComponent {
 
   redirecionarFormAtendimento(idAtendimento: number) {
     this.route.navigate([`/private/editar-atendimento/${idAtendimento}`])
+    
   }
 
   // Métodos avaliações

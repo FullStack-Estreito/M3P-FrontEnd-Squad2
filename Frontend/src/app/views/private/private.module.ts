@@ -20,6 +20,9 @@ import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboar
 import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamento-aluno/detalhamento-aluno.component';
 import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
 import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-editar-atendimento/form-editar-atendimento.component';
+import { AvaliacaoComponent } from 'src/app/shared/components/avaliacao/avaliacao/avaliacao.component';
+import { FormCriarAvaliacaoComponent } from 'src/app/shared/components/form-criar-avaliacao/form-criar-avaliacao/form-criar-avaliacao.component';
+import { FormEditarAvaliacaoComponent } from 'src/app/shared/components/form-editar-avaliacao/form-editar-avaliacao/form-editar-avaliacao.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-e
     ListagemUsuariosComponent,
     DashboardComponent,
     DetalhamentoAlunoComponent,
-    FormCriarAtendimentoComponent
+    FormCriarAtendimentoComponent,
+    FormCriarAvaliacaoComponent,
+    AvaliacaoComponent,
+    FormEditarAvaliacaoComponent
   ],
   providers: [provideNgxMask()],
   imports: [

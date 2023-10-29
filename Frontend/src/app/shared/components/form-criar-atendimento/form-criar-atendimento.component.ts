@@ -41,7 +41,6 @@ export class FormCriarAtendimentoComponent {
     this.service.getAlunos()
       .subscribe((result) => {
         this.alunos = result
-        console.log(this.alunos)
       })
   };
 

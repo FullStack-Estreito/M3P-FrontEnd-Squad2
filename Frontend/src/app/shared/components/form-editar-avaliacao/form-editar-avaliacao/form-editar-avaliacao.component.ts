@@ -24,7 +24,7 @@ export class FormEditarAvaliacaoComponent {
     professor_id: 0,
     aluno_id: 0,
     nota: 0,
-    pontuacao_maxima: 0,
+    pontuacao_Maxima: 0,
   }
 
 
@@ -83,7 +83,7 @@ export class FormEditarAvaliacaoComponent {
       "descricao": descricao,
       "materia": materia,
       "data": dataFormatada,
-      "pontuacao_maxima": notaMaxima,
+      "pontuacao_Maxima": notaMaxima,
       "nota": nota,
       "professor_id": alunoNumber,
       "aluno_id": professorNumber,
@@ -101,7 +101,6 @@ export class FormEditarAvaliacaoComponent {
     this.service.getAlunos()
       .subscribe((result) => {
         this.alunos = result
-        console.log(this.alunos)
       })
   };
 
@@ -118,6 +117,7 @@ export class FormEditarAvaliacaoComponent {
     this.service.getAvaliacao(avaliacaoId)
       .subscribe((result) => {
         this.avaliacao = result
+        console.log(this.avaliacao)
         const dataFormatada = this.formatarDataInput(this.avaliacao.data)
         
         this.editarForm.patchValue({
@@ -128,7 +128,7 @@ export class FormEditarAvaliacaoComponent {
           'materia': this.avaliacao.materia,
           'titulo': this.avaliacao.titulo,
           'nota': this.avaliacao.nota,
-          'pontuacao_maxima': this.avaliacao.pontuacao_maxima
+          'notaMaxima': this.avaliacao.pontuacao_Maxima
         })
       })
   }

@@ -2,7 +2,7 @@
 
     <!-- Título da página -->
     <h1 class="container-title">
-       Editar exercício
+       Editar avaliação
     </h1>
 
     <form class="form" [formGroup]="editarForm" #form="ngForm">
@@ -11,7 +11,7 @@
             <select class="form-select" formControlName="aluno" name="aluno" id="aluno">
                 <option selected>Selecione</option>
                 <option *ngFor="let aluno of alunos" [value]="aluno.id">
-                    {{aluno.nome}}
+                    {{aluno.aluno_nome.nome}} 
                 </option>
             </select>
             <label for="aluno">Aluno</label>
@@ -25,7 +25,7 @@
             <select class="form-select" formControlName="professor" name="professor" id="professor">
                 <option selected>Selecione</option>
                 <option *ngFor="let professor of professores" [value]="professor.id">
-                    {{professor.nome}}
+                    {{professor.professor_nome.nome}}
                 </option>
             </select>
             <label for="aluno">Prrofessor</label>
@@ -90,6 +90,30 @@
                     
                 </div>
             </div>
+        </div>
+
+        <!-- Nota -->
+        <div class="row">
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="nota" name="nota" formControlName="nota" />
+                    <label for="nota">Nota</label>
+                    <span class="mensagem-erro" *ngIf="mensagemErro('nota')">
+                        O campo matéria possui preenchimento obrigatório
+                    </span>
+                </div>
+            </div>
+            <!-- NotaMaxima -->
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="notaMaxima" name="notaMaxima" formControlName="notaMaxima" />
+                    <label for="notaMaxima">Nota Maxima</label>
+                    <span class="mensagem-erro" *ngIf="mensagemErro('notaMaxima')">
+                        O campo matéria possui preenchimento obrigatório
+                    </span>
+                </div>
+            </div>
+
         </div>
 
         <!-- Submit  -->
