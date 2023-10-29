@@ -42,8 +42,12 @@ import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamen
   ],
   providers: [provideNgxMask()],
   imports: [
-    CommonModule, ReactiveFormsModule, FormsModule,
-    PrivateRoutingModule, NgxMaskDirective, NgxMaskPipe,
+    CommonModule, 
+    ReactiveFormsModule, 
+    FormsModule,
+    PrivateRoutingModule, 
+    NgxMaskDirective, 
+    NgxMaskPipe,
     RouterModule
   ]
 })

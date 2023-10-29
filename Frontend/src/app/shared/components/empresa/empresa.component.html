@@ -6,33 +6,23 @@
     </h1>
 
     <!-- Formulário -->
-    <form class="form">
+    <form [formGroup]="empresas" (ngSubmit)="AttEmpresa()">
+
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputValue">
-            <label for="floatingInputValue">Nome</label>
+            <input type="text" class="form-control" id="floatingInputValue" formControlName="nomeEmpresa">
+            <label for="floatingInputValue">Nome Da Empresa</label>
         </div>
 
         <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputValue">
-            <label for="floatingInputValue">Slogan</label>
-        </div>
-
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputValue">
+            <input type="text" class="form-control" id="floatingInputValue" formControlName="cores">
             <label for="floatingInputValue">Cores</label>
         </div>
 
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputValue">
-            <label for="floatingInputValue">Logo</label>
+        <div class="form-floating display">
+            <input type="file" (change)="ArquivoSelecionado($event)" class="form-control col-4" id="logo" formControlName="logo">
+            <label for="logo">Logo</label>
         </div>
 
-        <div class="form-floating">
-            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Outras informações</label>
-        </div>
-
-        <!-- Botão submit -->
         <div class="div-btn">
             <button type="submit" class="btn btn-dark">SALVAR ALTERAÇÕES</button>
         </div>
