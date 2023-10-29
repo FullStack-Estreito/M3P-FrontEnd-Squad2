@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IAtendimento } from '../../interfaces/IAtendimento';
 import { ListagemUsuariosService } from '../../services/listagem-usuarios.service';
+import { FrontService } from '../../services/front.service';
 
 @Component({
   selector: 'app-form-editar-atendimento',
@@ -11,128 +12,81 @@ import { ListagemUsuariosService } from '../../services/listagem-usuarios.servic
 })
 export class FormEditarAtendimentoComponent implements OnInit {
 
-  editarForm: FormGroup;
-  atendimentoIdString: string | null = ''
-  atendimentoIdNumber: number = 0
-  alunos: any[] = []
-  pedagogos: any[] = []
-  atendimento: IAtendimento = {
-    id: 0,
-    data: '',
-    descricao: '',
-    aluno_id: 0,
-    pedagogo_id: 0,
-    aluno_nome: {nome: ''},
-    pedagogo_nome: {nome: ''}
-  }
+  modoEdicao = false;
+  atendimentoEdicao?: IAtendimento;
+  atendimentoData: IAtendimento[] = [];
+  editarAtendimentoForm!: FormGroup;
+  serviceAtedimento: any;
+  route: any;
+  serviceAtendimento: any;
 
-  constructor(private service: ListagemUsuariosService,
-    private router: Router,
-    private activateRoute: ActivatedRoute) {
 
-    // Formulário
-    this.editarForm = new FormGroup({
+  constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
+
+    const newLocal = this;
+    newLocal.editarAtendimentoForm = new FormGroup({
+      'id': new FormGroup('', [Validators.required]),
       'descricao': new FormControl('', [Validators.required]),
-
       'data': new FormControl('', [Validators.required]),
-
-      'aluno': new FormControl('', [Validators.required]),
-
-      'pedagogo': new FormControl('', [Validators.required]),
+      'id_Aluno': new FormControl('', [Validators.required]),
+      'id_Pedagogo': new FormControl('', [Validators.required]),
     });
   }
 
-  ngOnInit() {
-    // Pegando o ID do atendimento da URL
-    this.activateRoute.paramMap.subscribe(params => {
-      this.atendimentoIdString = this.activateRoute.snapshot.paramMap.get('id')
-
-      if (this.atendimentoIdString !== null) {
-        this.atendimentoIdNumber = parseInt(this.atendimentoIdString)
+  // Validador personalizado para permitir que o campo "finalizado" seja opcional
+  private requiredTrueOrNull(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      if (value === true || value === false || value === null) {
+        return null; // Válido quando for true, false ou null (opcional)
       }
-
-    });
-
-    this.getAlunos();
-    this.getPedagogos();
-    this.getAtendimento(this.atendimentoIdNumber);
+      return { 'required': { value } }; // Inválido quando diferente de true, false ou null
+    };
   }
 
- 
-  // Lista de alunos
-  getAlunos() {
-    this.service.getAlunos()
-      .subscribe((result) => {
-        this.alunos = result
-      })
-  };
-
-  // Lista de pedagogos
-  getPedagogos() {
-    this.service.getPedagogos()
-      .subscribe((result) => {
-        this.pedagogos = result
-      })
-  };
-
-  // Pegando os valores do atendimento selecionado
-  getAtendimento(id: number){
-    this.service.getAtendimentoId(id)
-    .subscribe((result) => {
-      this.atendimento = result
-      const dataFormatada = this.formatarDataInput(this.atendimento.data)
-   
-      this.editarForm.patchValue({
-        'descricao': this.atendimento.descricao,
-        'data': dataFormatada,
-        'aluno': this.atendimento.aluno_id,
-        'pedagogo': this.atendimento.pedagogo_id
-      })
-    })
+  async ngOnInit() {
+    this.atendimentoEdicao = await this.serviceAtendimento.obterAtendimentoPorId();
+    this._preencherCamposFormularioEdicao();
   }
 
-  // Validação dos campo
-  mensagemErro(campo: string) {
-    return (this.editarForm.get(campo)?.value === null || this.editarForm.get(campo)?.value.length === 0) && this.editarForm.get(campo)?.touched
+  private _preencherCamposFormularioEdicao() {
+    this.editarAtendimentoForm.get('id')?.setValue(this.atendimentoEdicao?.id);
+    this.editarAtendimentoForm.get('id_Aluno')?.setValue(this.atendimentoEdicao?.aluno_id);
+    this.editarAtendimentoForm.get('descricao')?.setValue(this.atendimentoEdicao?.descricao);
+    this.editarAtendimentoForm.get('data')?.setValue(this.atendimentoEdicao?.data);
+    this.editarAtendimentoForm.get('id_Pedagogo')?.setValue(this.atendimentoEdicao?.pedagogo_id);
   }
 
-  mensagemErroSelect(campo: string) {
-    return (this.editarForm.get(campo)?.value === '' || this.editarForm.get(campo)?.value === 'Selecione') && this.editarForm.get(campo)?.touched
-  }
+  async onSubmit() {
+    const atendimento = {
+      id: this.editarAtendimentoForm.get('id')?.value,
+      aluno_id: this.editarAtendimentoForm.get('id_Aluno')?.value,
+      descricao: this.editarAtendimentoForm.get('descricao')?.value,
+      data: this.editarAtendimentoForm.get('data')?.value,
+      pedagogo_id: this.editarAtendimentoForm.get('id_Pedagogo')?.value,
+    };
 
-  // Método edição do formato da data
-  formatarData(data: string) {
-    const parts = data.split('-')
-    return `${parts[2]}/${parts[1]}/${parts[0]}`
-  }
-
-  formatarDataInput(data: string) {
-    const parts = data.split('/')
-    return `${parts[2]}-${parts[1]}-${parts[0]}`;
-  }
-
-  editarAtendimento(){
-    const aluno = this.editarForm.get('aluno')?.value
-    const pedagogo = this.editarForm.get('pedagogo')?.value
-    const descricao = this.editarForm.get('descricao')?.value
-    const data = this.editarForm.get('data')?.value
-
-    const dataFormatada = this.formatarData(data)
-    const alunoNumber =  parseInt(aluno)
-    const pedagogoNumber =  parseInt(pedagogo)
-
-    const novosDados = {
-      "data": dataFormatada,
-      "descricao": descricao,
-      "aluno_id": alunoNumber,
-      "pedagogo_id": pedagogoNumber
+    // if (this.modoEdicao) {
+    //    atendimento.id = this.atendimentoEdicao?.id;
+    //    await this.serviceAtendimento.editar(atendimento);
+    //  }
+    //  else {
+    //    await this.serviceAtendimento.cadastrar(atendimento);
+    //  }
+    //  this.router.navigate(['/privado/pedagogicos']);/
+    //}
+    if (this.modoEdicao) {
+      const atendimento = {
+        id: this.atendimentoEdicao ? this.atendimentoEdicao.id : null,
+        // Outras propriedades do objeto atendimento
+      };
+      await this.serviceAtendimento.editar(atendimento);
+    } else {
+      await this.serviceAtendimento.cadastrar(atendimento);
     }
+    this.router.navigate(['/privado/pedagogicos']);
 
-    this.service.updateAtendimento(this.atendimentoIdNumber, novosDados)
-        .subscribe((result) => {
-          console.log(result)
-          alert("Atendimento editado com sucesso!")
-          this.router.navigate(['/private/atendimentos'])
-        })
+    //  validarMensagemDeErro(field: string) {
+    //    return this.editarAtendimentoForm.get(field)?.invalid && this.editarAtendimentoForm.get(field)?.touched;
   }
 }

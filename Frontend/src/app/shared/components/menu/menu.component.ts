@@ -16,4 +16,15 @@ export class MenuComponent  {
   alterarEstadoMenu() {
     this.menuaberto = !this.menuaberto
   }
+
+  LogOut(){
+    sessionStorage.removeItem('userTipo');
+    sessionStorage.removeItem('userNome');
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('token');
+    this.route.navigate([('/')]);
+  }
+
+
+
 }

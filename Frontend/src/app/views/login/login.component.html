@@ -5,28 +5,44 @@
     <form [formGroup]="registerForm" class="form">
       <div class="form-floating">
         <input
-          [ngClass]="{'is-invalid': submitted && registerForm.controls?.['email']?.errors}"
+          [ngClass]="{
+            'is-invalid': submitted && registerForm.controls['email']?.errors
+          }"
           type="email"
-          forControlName="email"
+          formControlName="email"
           class="form-control"
           id="floatingInputValue"
-          placeholder="Usuário"
+          placeholder="email"
         />
-        <label for="floatingInputValue">Usuário</label>
-      </div>
+        <label for="floatingInputValue">Email</label>
 
-      <div class="form-floating">
-        <input
-          type="password"
-          formControlName="senha"
-          class="form-control"
-          id="floatingInputValue"
-          placeholder="S"
-        />
-        <label for="floatingInputValue">Senha</label>
+        <div
+          *ngIf="submitted && registerForm.controls?.['email']?.errors"
+          class="text-danger"
+        >
+          <div *ngIf="registerForm.controls?.['email']?.errors?.['email']">
+            O Email é obrigatório!!
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <input
+            [ngClass]="{
+              'is-invalid': submitted && registerForm.controls['email']?.errors
+            }"
+            type="text"
+            formControlName="senha"
+            class="form-control"
+            id="floatingInputValue"
+            placeholder="senha"
+          />
+          <label for="floatingInputValue">Senha</label>
+        </div>
+        <button class="btn btn-success w-100" (click)="OnSubmit()">
+          Entrar
+        </button>
       </div>
     </form>
-    <button id="button-login" class="btn btn-success" (click)="OnSubmit()">Entrar</button>
 
     <div id="container-button">
       <!-- Botão modal cadastrar conta -->
@@ -34,7 +50,8 @@
         type="button"
         class="btn btn-link"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal">
+        data-bs-target="#exampleModal"
+      >
         Cadastrar conta
       </button>
 

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
-
 body {
   position: relative;
 }
@@ -8,7 +6,7 @@ body {
   position: fixed;
   top: 62px;
   background-color: white;
-  transition: all 0.5s ease; 
+  transition: all 2.5s auto; 
   z-index: 100;
   min-height: 92vh;
   width: 100px;
@@ -19,6 +17,13 @@ body {
   width: 250px;
   box-shadow: none;
 }
+
+.sidenav-aberto-button {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 23px;
+}
+
  
 .img-toggler {
   margin: 0px;
@@ -66,21 +71,20 @@ body {
 .sidenav-nav-link-selecionado {
   border: 1px solid #103A57;
   font-weight: 500;
-  padding: 8px 6px;
+  padding: 8px 13px;
   border-radius: 8px;
   background: #F9F9FA;
 }
 
 #btn-sair {
   margin-top: 40px;
-  font-family: 'Inter', sans-serif;
-  color: black;
-  border-color: black;
+  color: white;
+  background-color: #103A57;
   font-weight: 200;
   font-size: 14px;
 }
 #btn-sair:hover {
-  color: black;
+  font-weight: 400;
 }
 
 img {

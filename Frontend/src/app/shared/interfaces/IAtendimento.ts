@@ -4,6 +4,6 @@ export interface IAtendimento {
   descricao: string,
   aluno_id: number,
   pedagogo_id: number,
-  pedagogo_nome?: { nome: string },
+  pedagogo_nome?: { nome: string},
   aluno_nome?: {nome: string}
 }

@@ -96,10 +96,8 @@
       <div class="col-md">
         <div class="form-floating">
           <input
-            [ngClass]="{
-              'is-invalid':
-                submitted && registerForm.controls['telefone']?.errors
-            }" type="text" formControlName="telefone" class="form-control" mask="(00) 0 0000-0000"
+            [ngClass]="{'is-invalid': submitted && registerForm.controls['telefone']?.errors}"
+             type="text" formControlName="telefone" class="form-control" mask="(00) 0 0000-0000"
             id="floatingInputValue" />
           <label for="floatingInputValue">Telefone</label>
         </div>

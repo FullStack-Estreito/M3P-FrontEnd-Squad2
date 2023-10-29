@@ -2,8 +2,9 @@
 <div class="sidenav" [ngClass]="{'sidenav-aberto': menuaberto}">
   <div class="sidenav-container">
     <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="{'sidenav-aberto-button': menuaberto}">
-      <img class="img-toggler" src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
-        style="height: 30px;">
+      <img class="img-toggler" 
+      src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
+      style="height: 30px;">
     </button>
 
     <!-- Lista de rotas -->
@@ -59,7 +60,7 @@
 
       <!-- Detalhamento aluno -->
       <li class="sidenav-links-item">
-        <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" 
+        <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado"
         routerLink="/private/detalhamento-aluno">
           <img src="../../../../assets/menu-icons/detalhamento-aluno.svg" alt="Ícone menu" style="margin-bottom: 1px;">
           Detalhamento aluno
@@ -76,7 +77,7 @@
     </ul>
 
     <!-- Botão logout -->
-    <button *ngIf="menuaberto === true" type="button" class="btn btn-outline-light" id="btn-sair">
+    <button *ngIf="menuaberto === true" (click)="LogOut()" type="button" class="btn btn-outline-light" id="btn-sair">
       <i class="bi bi-arrow-left-circle-fill"></i>Sair
     </button>
 
