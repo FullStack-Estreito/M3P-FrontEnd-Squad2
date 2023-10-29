@@ -1,7 +1,6 @@
 .container {
     width: 98%;
     margin-top: 40px;
-    margin-left: 48px;
     padding: 0px;
 }
 
@@ -19,18 +18,21 @@ input {
     border-radius: 22px;
     padding-left: 20px;
     box-shadow: 0px 0px 10px 0px rgba(95, 100, 104, 0.39);
+    font-size: 13px;
 }
 
 #form-search-btn {
     color: black;
     text-decoration: none;
-}
-#form-search-btn:hover {
-    background-color:  #348dcd;
-    color: white;
+    font-size: 13px;
 }
 
-.container-cards{
+#form-search-btn:hover {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.container-cards {
     display: grid;
     grid-template-columns: repeat(4, auto);
     align-items: center;
@@ -74,7 +76,8 @@ input {
     padding-bottom: 20px;
 }
 
-.container-cards-user-ctn-button-editar, .container-cards-user-ctn-button-deletar {
+.container-cards-user-ctn-button-editar,
+.container-cards-user-ctn-button-deletar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,6 +105,7 @@ input {
     color: black;
     text-decoration: none;
 }
+
 .container-cards-user-card-detalhamento:hover {
     text-decoration: underline;
     font-weight: 500;
@@ -109,34 +113,40 @@ input {
 
 
 /* Responsividade */
-@media (max-width: 1500px){
+@media (max-width: 1500px) {
     .container {
         width: 95%;
     }
 }
-@media (max-width: 1402px){
+
+@media (max-width: 1402px) {
     .container-cards {
         grid-template-columns: repeat(3, auto);
     }
 }
-@media (max-width: 1156px){
-    .container-cards-user-card{
+
+@media (max-width: 1156px) {
+    .container-cards-user-card {
         width: 200px;
         height: 350x;
         padding-top: 20px;
     }
-    .container-cards-user-card-ctn-button  {
+
+    .container-cards-user-card-ctn-button {
         flex-direction: column;
         gap: 10px;
     }
+
     .container-cards-user-card-name {
         font-size: 14.6px;
     }
+
     .container-cards-user-card-info {
         font-size: 14px
     }
 }
-@media (max-width: 888px){
+
+@media (max-width: 888px) {
     .container-cards {
         grid-template-columns: repeat(2, auto);
         justify-content: space-evenly;

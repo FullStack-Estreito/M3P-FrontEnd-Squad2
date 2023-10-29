@@ -9,7 +9,6 @@ import { EmpresaComponent } from '../../shared/components/empresa/empresa.compon
 import { UsuarioComponent } from '../../shared/components/usuarios/usuario.component'
 import { FormCriarUsuarioComponent } from '../../shared/components/form-criar-usuario/form-criar-usuario.component';
 import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-usuario/form-editar-usuario.component';
-import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
@@ -20,6 +19,7 @@ import { FormEditarExercicioComponent } from 'src/app/shared/components/form-edi
 import { ListagemUsuariosComponent } from 'src/app/shared/components/listagem-usuarios/listagem-usuarios.component';
 import { DashboardComponent } from 'src/app/shared/components/dashboard/dashboard.component';
 import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamento-aluno/detalhamento-aluno.component';
+import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,6 @@ import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamen
     UsuarioComponent,
     FormCriarUsuarioComponent,
     FormEditarUsuarioComponent,
-    EnderecoComponent,
     AtendimentosComponent,
     FormEditarAtendimentoComponent,
     ExerciciosComponent,
@@ -38,7 +37,8 @@ import { DetalhamentoAlunoComponent } from 'src/app/shared/components/detalhamen
     FormEditarExercicioComponent,
     ListagemUsuariosComponent,
     DashboardComponent,
-    DetalhamentoAlunoComponent
+    DetalhamentoAlunoComponent,
+    FormCriarAtendimentoComponent
   ],
   providers: [provideNgxMask()],
   imports: [

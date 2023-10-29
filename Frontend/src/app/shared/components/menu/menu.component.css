@@ -9,7 +9,7 @@ body {
   top: 62px;
   background-color: white;
   transition: all 0.5s ease; 
-  z-index: 2;
+  z-index: 100;
   min-height: 92vh;
   width: 100px;
   box-shadow: 8px 20px 12px 3px rgba(215, 222, 227, 0.39);
@@ -30,7 +30,7 @@ body {
 }
 
 .sidenav-container {
-  padding-top: 40px;
+  padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 13px;
@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 50px;
+  gap: 20px;
 }
 
 .sidenav-links {

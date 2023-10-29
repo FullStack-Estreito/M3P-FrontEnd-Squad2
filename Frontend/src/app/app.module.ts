@@ -7,19 +7,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
 import { LogsComponent } from './shared/components/logs/logs.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     EditComponent,
     NotFoundComponent,
     LogsComponent
+=======
+    NotFoundComponent
+>>>>>>> 3954ed4a16153a8e79c04764c90c88b7a24fc49f
   ],
   imports: [
     BrowserModule,

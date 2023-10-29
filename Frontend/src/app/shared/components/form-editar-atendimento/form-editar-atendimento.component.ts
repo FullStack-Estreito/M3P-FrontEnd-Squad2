@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
-import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
-import { FrontService } from 'src/app/shared/services/front.service';
 import { IAtendimento } from '../../interfaces/IAtendimento';
-import { serviceAtendimento } from 'src/app/shared/services/serviceAtendimento';
+import { ListagemUsuariosService } from '../../services/listagem-usuarios.service';
 
 @Component({
   selector: 'app-form-editar-atendimento',

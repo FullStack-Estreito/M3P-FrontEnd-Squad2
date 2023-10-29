@@ -106,6 +106,10 @@ section {
     
 }
 
+.container-cards {
+    display: flex;
+    justify-content: flex-start;
+}
 .container-cards-card {
     display: flex;
     flex-direction: column;
@@ -168,7 +172,6 @@ section {
     .container-table-header {
         width: 50%;
     }
-    
     .container-table-body {
         width: 50%;
     }
