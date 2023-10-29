@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ListagemUsuariosComponent {
 
   @Input()
-  tipoUsuario: string = ''
+  tipoUsuario: string | undefined = ''
 
   listaValores: any[] = []
   listaValoresFiltro: any[] = []

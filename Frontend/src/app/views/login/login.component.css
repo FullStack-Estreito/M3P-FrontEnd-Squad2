@@ -39,6 +39,8 @@ div#container-button, #button-login {
 .form-control {
     border-color: black;
     border-width: 0.5px;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
 #container-button {

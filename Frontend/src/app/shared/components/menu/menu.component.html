@@ -27,7 +27,7 @@
       </li>
 
       <!-- Atendimentos -->
-      <li class="sidenav-links-item">
+      <li class="sidenav-links-item" *ngIf="tipoUsuario == 'Administrador' || tipoUsuario == 'Pedagogo'">
         <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" routerLink="/private/atendimentos">
           <img src="../../../../assets/menu-icons/atendimentos.svg" alt="Ícone menu">
           Atendimentos
@@ -50,8 +50,8 @@
         </a>
       </li>
 
-      <!-- Avaliações -->
-      <li class="sidenav-links-item">
+      <!-- Logs -->
+      <li class="sidenav-links-item" *ngIf="tipoUsuario == 'Administrador'">
         <a class="sidenav-nav-link">
           <img src="../../../../assets/menu-icons/logs.svg" alt="Ícone menu">
           Logs
@@ -68,7 +68,7 @@
       </li>
 
       <!-- Empresa -->
-      <li class="sidenav-links-item">
+      <li class="sidenav-links-item" *ngIf="tipoUsuario == 'Administrador'">
         <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" routerLink="/private/empresa">
           <img src="../../../../assets/menu-icons/empresa.svg" alt="Ícone menu" style="margin-bottom: 1px;">
           Empresa

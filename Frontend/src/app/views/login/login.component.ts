@@ -41,6 +41,7 @@ export class loginComponent implements OnInit {
       sessionStorage.setItem('userTipo', this.usuarios[index].tipo);
       sessionStorage.setItem('userNome', this.usuarios[index].nome);
       sessionStorage.setItem('userId', this.usuarios[index].id.toString());
+      sessionStorage.setItem('logado', "true")
 
       return true;
     }

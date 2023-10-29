@@ -12,6 +12,18 @@ export class MenuComponent  {
   constructor(private route: Router) {}
 
   menuaberto = false;
+  tipoUsuario: string | undefined
+
+  ngOnInit(){
+    const userTipo = sessionStorage.getItem('userTipo');
+
+    if (userTipo !== null) {
+      this.tipoUsuario = userTipo;
+    } else {
+      this.tipoUsuario = '';
+    }
+
+  }
 
   alterarEstadoMenu() {
     this.menuaberto = !this.menuaberto
@@ -22,6 +34,8 @@ export class MenuComponent  {
     sessionStorage.removeItem('userNome');
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('logado');
+    sessionStorage.removeItem('loggenIn');
     this.route.navigate([('/')]);
   }
 

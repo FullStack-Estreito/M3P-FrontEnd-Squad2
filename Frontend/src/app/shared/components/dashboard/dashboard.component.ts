@@ -16,12 +16,21 @@ export class DashboardComponent {
   quantidadeAtendimentos: number = 0
 
   // Dados para listagem de alunos
-  tipoUsuario: string = "Administrador"
+  tipoUsuario: string | undefined
 
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+
+    const userTipo = sessionStorage.getItem('userTipo');
+
+    if (userTipo !== null) {
+      this.tipoUsuario = userTipo;
+    } else {
+      this.tipoUsuario = '';
+    }
+
 
     this.dashboardService.getAlunos()
       .subscribe((data) => {
