@@ -17,13 +17,9 @@ import { LogsComponent } from './shared/components/logs/logs.component';
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    EditComponent,
     NotFoundComponent,
-    LogsComponent
-=======
+    LogsComponent,
     NotFoundComponent
->>>>>>> 3954ed4a16153a8e79c04764c90c88b7a24fc49f
   ],
   imports: [
     BrowserModule,

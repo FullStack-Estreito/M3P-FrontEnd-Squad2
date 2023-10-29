@@ -30,45 +30,53 @@ export class loginComponent implements OnInit {
     });
   }
 
-  verify() {
-    this.Buscar();
+  verificarLogin(): boolean {
+    var index = 400;
     for (let i = 0; i < this.usuarios.length; i++) {
-      if (this.usuarios[i].email == this.registerForm.get('email')?.value)
-        return true;
+      if (this.usuarios[i].email == this.registerForm.get('email')?.value) {
+        index = i;
+      }
     }
-    return false;
+    if (this.usuarios[index].senha == this.registerForm.get('senha')?.value) {
+      sessionStorage.setItem('userTipo', this.usuarios[index].tipo);
+      sessionStorage.setItem('userNome', this.usuarios[index].nome);
+      sessionStorage.setItem('userId', this.usuarios[index].id.toString());
+
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
-  Logar() {
-    this.frontService.sign(this.registerForm.value).subscribe(login => {
-      this.loginUsuario.push(login);
-      this.token = login;
-      sessionStorage.setItem("token", this.token);
-    });
+
+  async Logar() {
+    var logado = await this.verificarLogin();
+    if (logado) {
+      this.frontService.sign(this.registerForm.value).subscribe(login => {
+        this.loginUsuario.push(login);
+        this.token = login;
+        sessionStorage.setItem("token", this.token.token);
+      });
+    }
   }
 
 
-
-
-
-  OnSubmit() {
-    var logado = this.verify();
+  async OnSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) {
-      if (logado == true) {
-        this.Logar();
-        this.router.navigate([`/private/atendimentos`]);
-      }
-      else {
-        console.log("token" + this.token);
-        console.log("error");
-      }
+      return
+    }
+    else {
+      await this.Logar();
+      this.router.navigate([`/private`]);
     }
   }
+
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       id: [0],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]]
     });
   }
