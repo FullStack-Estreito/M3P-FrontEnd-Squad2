@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
@@ -17,7 +16,6 @@ import { PrivateModule } from './views/private/private.module';
 @NgModule({
   declarations: [
     AppComponent,
-    EditComponent,
     NotFoundComponent
   ],
   imports: [
