@@ -19,6 +19,14 @@ export class ListagemUsuariosService {
     return this.httpClient.get<IUsuario[]>(`${environment.apiBack}/api/usuarios?empresaId=1&tipo=Aluno`)
   }
 
+  getAtendimentoId(id: number){
+    return this.httpClient.get<IAtendimento>(`${environment.apiBack}/api/atendimentos/${id}`)
+  }
+
+  updateAtendimento(id: number, data: IAtendimento){
+    return this.httpClient.put(`${environment.apiBack}/api/atendimentos/${id}`, data)
+  }
+
   getPedagogos(){
     return this.httpClient.get<IUsuario[]>(`${environment.apiBack}/api/usuarios?empresaId=1&tipo=Pedagogo`)
   }

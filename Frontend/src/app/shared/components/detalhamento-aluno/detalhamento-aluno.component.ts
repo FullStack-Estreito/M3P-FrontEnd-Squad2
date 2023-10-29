@@ -61,8 +61,8 @@ export class DetalhamentoAlunoComponent {
       );
   }
 
-  redirecionarFormAtendimento() {
-    this.route.navigate([`/private/dashboard`])
+  redirecionarFormAtendimento(idAtendimento: number) {
+    this.route.navigate([`/private/editar-atendimento/${idAtendimento}`])
   }
 
   // Métodos avaliações

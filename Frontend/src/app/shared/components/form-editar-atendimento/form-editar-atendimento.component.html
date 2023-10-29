@@ -1,58 +1,71 @@
 <div class="container">
-  <form class="form">
 
-    <!-- Nome -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="id_Aluno">ID Aluno</label>
-          <input type="text" class="form-control" id="id_Aluno" formControlName="id_Aluno">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <button type="submit" class="btn btn-dark">EDITAR</button>
-      </div>
-    </div>
-    <p></p>
+  <!-- Título da página -->
+  <h1 class="container-title">
+      Cadastrar atendimento
+  </h1>
+  <form class="form" [formGroup]="editarForm" #form="ngForm">
 
-    <!-- Descrição -->
-    <div class="row">
-      <div class="col">
-        <label for="descricao">Descrição</label>
-        <textarea class="form-control" name="descricao" id="descricao" rows="3" formControlName="descricao"></textarea>
-        <!--        <span class="msg-erro-form text-danger" *ngIf="validarMensagemDeErro('descricao')">Por favor insira a
-          descrição do atendimento</span> -->
+      <!-- Alunos -->
+      <div class="form-floating mb-3">
+          <select class="form-select" formControlName="aluno" name="aluno" id="aluno">
+              <option selected>Selecione</option>
+              <option *ngFor="let aluno of alunos" [value]="aluno.id">
+                  {{aluno.nome}}
+              </option>
+          </select>
+          <label for="aluno">Aluno</label>
+          <span class="mensagem-erro"
+          *ngIf="mensagemErroSelect('aluno')">
+              A seleção de um aluno é obrigatório
+          </span>
       </div>
-    </div>
-    <p></p>
 
-    <div class="row">
-      <div class="col">
-        <label for="data">Data </label>
-        <input type="date" class="form-control" id="data" formControlName="data">
+      <!-- Pedagogos -->
+      <div class="form-floating mb-3">
+          <select class="form-select" formControlName="pedagogo" name="pedagogo" id="pedagogo">
+              <option selected>Selecione</option>
+              <option *ngFor="let pedagogo of pedagogos" [value]="pedagogo.id">
+                  {{pedagogo.nome}}
+              </option>
+          </select>
+          <label for="aluno">Pedagogo</label>
+          <span class="mensagem-erro"
+          *ngIf="mensagemErroSelect('pedagogo')">
+              A seleção de um pedagogo é obrigatório
+          </span>
       </div>
-      <p></p>
 
-      <div class="row">
-        <div class="col">
-          <label for="id.Pedagogo">id Pedagogo</label>
-          <input type="text" class="form-control" id="id.Pedagogo" formControlName="id.Pedagogo">
-        </div>
+      <!-- Descrição -->
+      <div class="form-floating mb-3">
+          <textarea class="form-control" formControlName="descricao" name="descricao" id="descricao" rows="5">
+          </textarea>
+          <label for="descricao">Descrição</label>
+          <span class="mensagem-erro"
+          *ngIf="mensagemErro('descricao')">
+              O preenchimento do campo descrição é obrigatório
+          </span>
       </div>
-    </div>
-    <!-- Status -->
-    <div class="form-check">
-      <!-- Ativo -->
-      <input class="form-check-input" type="checkbox" value="true" id="flexCheckCheckedDisabled" checked>
-      <label class="form-check-label" for="flexCheckCheckedDisabled">
-        Ativo
-      </label>
-    </div>
 
-    <!-- Botões -->
-    <div class="div-btn">
-      <button type="submit" class="btn btn-dark">SALVAR</button>
-      <button type="submit" class="btn btn-delete">DELETAR</button>
-    </div>
+      <!-- Data -->
+      <div class="form-floating mb-3">
+          <input type="date" class="form-control" formControlName="data" name="data" id="data">
+          <label for="data">Data</label>
+          <span class="mensagem-erro"
+          *ngIf="mensagemErro('data')">
+              O preenchimento do campo data é obrigatório
+          </span>
+      </div>
+
+      <!-- Botões -->
+      <div class="div-btn">
+          <button id="btn-salvar"
+          type="submit" 
+          class="btn btn-success d-grid w-100"
+          [disabled]="this.form.form.invalid"
+          (click)="editarAtendimento()">
+          Salvar 
+      </button>
+      </div>
   </form>
 </div>
