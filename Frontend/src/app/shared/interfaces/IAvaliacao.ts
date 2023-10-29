@@ -1,7 +1,7 @@
 import { NumberValueAccessor } from "@angular/forms";
 
 export interface IAvaliacao {
-    id: number, 
+    id?: number, 
     titulo: string,
     descricao: string, 
     materia: string,
@@ -9,6 +9,5 @@ export interface IAvaliacao {
     pontuacao_maxima: number,
     nota: number,
     professor_id: number,
-    aluno_id: number,
-    professor_nome: { nome: string }
+    aluno_id: number
 }

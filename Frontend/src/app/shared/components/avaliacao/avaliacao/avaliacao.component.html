@@ -1,0 +1,71 @@
+<div class="container">
+
+    <!-- Título da página -->
+    <h1 class="container-title">
+      Avaliação
+    </h1>
+  
+    <!-- Botão registrar -->
+    <div class="container-btn-registrar">
+      <button id="btn-registrar" 
+      class="btn btn-success d-grid w-100"
+      (click)="redirecionarFormCriarAvaliacao()">
+        Adicionar uma nova avaliação
+      </button>
+    </div>
+  
+    <!-- Buscar -->
+    <div class="container-form">
+      <form id="form-search" class="d-flex" role="search">
+  
+        <input class="form-control me-2" 
+        name="search" 
+        type="search" 
+        placeholder="Procurar avaliação pelo nome do aluno..."
+        aria-label="Search" 
+        [(ngModel)]="pesquisa">
+
+        <button id="form-search-btn" 
+        class="btn btn-link" 
+        (click)="search()">
+          Buscar
+        </button>
+      </form>
+    </div>
+  
+    <div class="container-cards">
+      <div *ngFor="let avaliacao of avaliacaoes" class="container-cards-card">
+          <!-- Info -->
+          <p class="container-cards-card-p">
+              Data
+              <span class="container-cards-card-span">{{avaliacao.data_Conclusao}}</span>
+          </p>
+          <p class="container-cards-card-p">
+              Descrição
+              <span class="container-cards-card-span">{{avaliacao.descricao}}</span>
+          </p>
+          <p class="container-cards-card-p">
+              Matéria
+              <span class="container-cards-card-span">{{avaliacao.materia}}</span>
+          </p>
+          <p class="container-cards-card-p">
+              Professor
+              <span class="container-cards-card-span">{{avaliacao.professor_nome.nome}}</span>
+          </p>
+           <!-- Botões -->
+           <div class="container-cards-card-ctn-button">
+              <button (click)="redirecionarFormEditarAvaliacao(avaliacao.id)"
+              class="container-cards-card-ctn-button-editar">
+                  Editar
+                  <img src="../../../../assets/dashboard/pencil.svg" style="height: 13px;">
+              </button>
+  
+              <button (click)="deletarAvaliacao(avaliacao.id)" 
+              class="container-cards-card-ctn-button-deletar">
+                  <img src="../../../../assets/dashboard/trash.svg">
+                  Deletar
+              </button>
+          </div>
+      </div>
+  </div>
+  
