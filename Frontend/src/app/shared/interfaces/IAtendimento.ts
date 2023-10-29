@@ -1,7 +1,8 @@
 export interface IAtendimento {
-  id: number;
-  data: Date;
-  descricao: string;
-  id_Aluno: number;
-  id_Pedagogo: number;
+  id: number,
+  data: string,
+  descricao: string,
+  aluno_id: number,
+  pedagogo_id: number,
+  professor_nome: { nome: string }
 }

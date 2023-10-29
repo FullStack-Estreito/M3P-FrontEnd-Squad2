@@ -1,23 +1,17 @@
-<!--<div class="sidenav" [ngClass]="menuaberto 'sidenav-aberto': '' "> -->
 <!--<div class="sidenav-container"> -->
 <div class="sidenav" [ngClass]="{'sidenav-aberto': menuaberto}">
   <div class="sidenav-container">
     <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="{'sidenav-aberto-button': menuaberto}">
-      <img class="img-toggler" src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu" style="height: 30px;">
+      <img class="img-toggler" src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
+        style="height: 30px;">
     </button>
-
-
-<!--  <button class="btn btn-link" (click)="alterarEstadoMenu()" [ngClass]="menuaberto 'sidenav-aberto-button': '' ">
-        <img class="img-toggler" src="../../../../assets/menu-icons/menu.svg" alt="Ícone de abrir e fechar o menu"
-          style="height: 30px;">
-      </button> -->
 
     <!-- Lista de rotas -->
     <ul class="sidenav-links" *ngIf="menuaberto === true">
 
       <!-- Dashboard -->
       <li class="sidenav-links-item">
-        <a class="sidenav-nav-link">
+        <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" routerLink="/private/dashboard">
           <img src="../../../../assets/menu-icons/dashboard.svg" alt="Ícone menu">
           Dashboard
         </a>
@@ -65,7 +59,8 @@
 
       <!-- Detalhamento aluno -->
       <li class="sidenav-links-item">
-        <a class="sidenav-nav-link">
+        <a class="sidenav-nav-link" routerLinkActive="sidenav-nav-link-selecionado" 
+        routerLink="/private/detalhamento-aluno">
           <img src="../../../../assets/menu-icons/detalhamento-aluno.svg" alt="Ícone menu" style="margin-bottom: 1px;">
           Detalhamento aluno
         </a>

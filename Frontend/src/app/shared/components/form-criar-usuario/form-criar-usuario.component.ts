@@ -113,7 +113,7 @@ export class FormCriarUsuarioComponent {
       return;
     } else
       this.frontService.edit(this.registerForm.value, this.frontService.idDelete).subscribe(user => {
-        this.usuarios.push(user);
+        // this.usuarios.push(user);
       });
     this.frontService.boolEditar = false;
     this.router.navigate(['/']);
@@ -121,9 +121,9 @@ export class FormCriarUsuarioComponent {
 
   excluir() {
     this.frontService.del(this.frontService.idDelete).subscribe(user => {
-      this.usuarios.push(user);
-      alert("deletado");
-      this.Buscar();
+      // this.usuarios.push(user);
+      // alert("deletado");
+      // this.Buscar();
     });
   }
 

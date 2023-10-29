@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
 
 .toolbar {
-    position: absolute;
+    position: fixed;
     height: 62px;
     width: 100vw;
-    top: 0;
-    background-color: #006666;
+    background-color: white;
     font-family: 'Inter', sans-serif;
     z-index: 2;
+    box-shadow: 18px 1px 12px 3px rgba(215, 222, 227, 0.39);
+
 }
 
 .toolbar-container {
@@ -18,7 +19,7 @@
 }
 
 .toolbar-titulo {
-    margin-left: 200px;
+    margin-left: 300px;
     margin-top: 16px;
     border-bottom: 3px solid black;
     padding-bottom: 11.5px;
