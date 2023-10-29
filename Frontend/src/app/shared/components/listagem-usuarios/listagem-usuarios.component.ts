@@ -62,9 +62,6 @@ export class ListagemUsuariosComponent {
         this.listaValores = this.listaValoresFiltro;
         alert("Nenhum usuário encontrado!");
       }
-
-      console.log(this.listaValores, this.listaValoresFiltro)
-
     }
     else if (this.pesquisa === '') {
       this.listaValores = this.listaValoresFiltro;

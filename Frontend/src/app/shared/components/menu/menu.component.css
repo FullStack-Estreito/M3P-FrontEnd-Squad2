@@ -9,7 +9,7 @@ body {
   top: 62px;
   background-color: white;
   transition: all 0.5s ease; 
-  z-index: 2;
+  z-index: 100;
   min-height: 92vh;
   width: 100px;
   box-shadow: 8px 20px 12px 3px rgba(215, 222, 227, 0.39);
