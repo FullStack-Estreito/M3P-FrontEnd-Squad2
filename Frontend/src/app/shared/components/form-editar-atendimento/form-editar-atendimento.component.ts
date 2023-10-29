@@ -24,7 +24,8 @@ export class FormEditarAtendimentoComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
-  this.editarAtendimentoForm = new FormGroup({
+
+    this.editarAtendimentoForm = new FormGroup({
     'id': new FormGroup('',[Validators.required]),
     'descricao': new FormControl('', [Validators.required]),
     'data': new FormControl('', [Validators.required]),
@@ -51,19 +52,19 @@ async ngOnInit() {
 
 private _preencherCamposFormularioEdicao() {
   this.editarAtendimentoForm.get('id')?.setValue(this.atendimentoEdicao?.id);
-  this.editarAtendimentoForm.get('id_Aluno')?.setValue(this.atendimentoEdicao?.id_Aluno);
+  this.editarAtendimentoForm.get('id_Aluno')?.setValue(this.atendimentoEdicao?.aluno_id);
   this.editarAtendimentoForm.get('descricao')?.setValue(this.atendimentoEdicao?.descricao);
   this.editarAtendimentoForm.get('data')?.setValue(this.atendimentoEdicao?.data);
-  this.editarAtendimentoForm.get('id_Pedagogo')?.setValue(this.atendimentoEdicao?.id_Pedagogo);
+  this.editarAtendimentoForm.get('id_Pedagogo')?.setValue(this.atendimentoEdicao?.pedagogo_id);
 }
 
 async onSubmit() {
-  const atendimento: IAtendimento = {
+  const atendimento = {
     id: this.editarAtendimentoForm.get('id')?.value,
-    id_Aluno: this.editarAtendimentoForm.get('id_Aluno')?.value,
+    aluno_id: this.editarAtendimentoForm.get('id_Aluno')?.value,
     descricao: this.editarAtendimentoForm.get('descricao')?.value,
     data: this.editarAtendimentoForm.get('data')?.value,
-    id_Pedagogo: this.editarAtendimentoForm.get('id_Pedagogo')?.value,
+    pedagogo_id: this.editarAtendimentoForm.get('id_Pedagogo')?.value,
   };
 
 // if (this.modoEdicao) {

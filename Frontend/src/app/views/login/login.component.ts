@@ -30,19 +30,32 @@ export class loginComponent implements OnInit {
     });
   }
 
+  verify() {
+    this.Buscar();
+    for (let i = 0; i < this.usuarios.length; i++) {
+      if (this.usuarios[i].email == this.registerForm.get('email')?.value)
+        return true;
+    }
+    return false;
+  }
+
   Logar() {
     this.frontService.sign(this.registerForm.value).subscribe(login => {
-      // var logado = login;
       this.loginUsuario.push(login);
       this.token = login;
-      console.log("token" + this.token);
+      sessionStorage.setItem("token", this.token);
     });
   }
 
+
+
+
+
   OnSubmit() {
+    var logado = this.verify();
     this.submitted = true;
     if (this.registerForm.invalid) {
-      if (this.loginUsuario != null) {
+      if (logado == true) {
         this.Logar();
         this.router.navigate([`/private/atendimentos`]);
       }

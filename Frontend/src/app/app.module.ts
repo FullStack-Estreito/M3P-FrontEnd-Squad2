@@ -11,13 +11,15 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { LogsComponent } from './shared/components/logs/logs.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,
