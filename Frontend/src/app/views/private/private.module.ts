@@ -9,7 +9,6 @@ import { EmpresaComponent } from '../../shared/components/empresa/empresa.compon
 import { UsuarioComponent } from '../../shared/components/usuarios/usuario.component'
 import { FormCriarUsuarioComponent } from '../../shared/components/form-criar-usuario/form-criar-usuario.component';
 import { FormEditarUsuarioComponent } from '../../shared/components/form-editar-usuario/form-editar-usuario.component';
-import { EnderecoComponent } from 'src/app/shared/components/endereco/endereco.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AtendimentosComponent } from 'src/app/shared/components/atendimentos/atendimentos.component';
@@ -31,7 +30,6 @@ import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-cr
     UsuarioComponent,
     FormCriarUsuarioComponent,
     FormEditarUsuarioComponent,
-    EnderecoComponent,
     AtendimentosComponent,
     FormEditarAtendimentoComponent,
     ExerciciosComponent,

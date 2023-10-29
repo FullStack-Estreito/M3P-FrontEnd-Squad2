@@ -81,7 +81,7 @@ export class FormEditarAtendimentoComponent implements OnInit {
     .subscribe((result) => {
       this.atendimento = result
       const dataFormatada = this.formatarDataInput(this.atendimento.data)
-      console.log(this.atendimento.data)
+   
       this.editarForm.patchValue({
         'descricao': this.atendimento.descricao,
         'data': dataFormatada,

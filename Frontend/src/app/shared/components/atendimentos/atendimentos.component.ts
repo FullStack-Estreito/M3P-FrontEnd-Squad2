@@ -57,7 +57,7 @@ export class AtendimentosComponent implements OnInit {
         this.getAtendimentos()
       },
         (error: any) => {
-          console.error('Erro ao deletar usuário:', error);
+          console.error('Erro ao deletar exercício:', error);
         }
       );
   }
