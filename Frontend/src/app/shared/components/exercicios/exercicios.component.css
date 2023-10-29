@@ -1,66 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
-
 .container {
   width: 90%;
   margin: 0px;
 }
 
 .container-title {
-  font-family: 'Nunito', sans-serif;
   font-size: 16px;
-  font-weight: 4700;
-  color: #172c3c;
+  font-weight: 300;
+  color: white;
   padding: 20px;
   width: 100%;
-  background-color: #00858569;
+  background-color: #103A57;
   border: 0.7px solid black;
   border-radius: 8px;
 }
 
-img {
-  margin-left: 7px;
-  margin-bottom: 2px;
+.container-btn-registrar {
+  margin-top: 40px;
 }
 
-.container-button {
-  display: flex;
-  width: 100%;
-  margin-top: 30px;
-  justify-content: space-around;
+#btn-registrar {
+  font-size: 13px;
+  border-radius: 22px;
+  box-shadow: 0px 0px 10px 0px rgba(95, 100, 104, 0.39);
 }
 
-.btn.btn-secondary {
-  font-size: 14px;
-  font-weight: 200;
-  font-family: 'Nunito', sans-serif;
-  color: black;
-  padding-right: 100px;
-  padding-left: 100px;
-  height: 50px;
+.container-form {
   margin-top: 20px;
-  border-color: #f69c0bb0;
-  background-color: #f69c0b80;
+  margin-bottom: 40px;
 }
 
-.btn.btn-secondary:hover {
-  color: white;
-  border-color: #f69a0b;
-  background-color: #f69a0b
+input {
+  border-radius: 22px;
+  padding-left: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(95, 100, 104, 0.39);
+  font-size: 13px;
 }
 
-.container-formularios {
-  width: 100%;
+#form-search-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+#form-search-btn:hover {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.container-cards-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
   margin-top: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(95, 100, 104, 0.39);
 }
 
-@media (max-width: 986px) {
-  .container-button {
-    flex-direction: column;
-    align-items:  center;
-  }
-  .btn.btn-secondary {
-    padding-right: 50px;
-    padding-left: 50px;
-    width: 70%;
-  }
+.container-cards-card-p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.container-cards-card-span {
+  display: block;
+  font-weight: 300;
+}
+
+.container-cards-card-ctn-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.container-cards-card-ctn-button-editar, .container-cards-card-ctn-button-deletar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.container-cards-card-ctn-button-editar {
+  background-color: #a7cd2c;
+}
+
+.container-cards-card-ctn-button-deletar {
+  background-color: #f75353;
 }

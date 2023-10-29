@@ -30,7 +30,7 @@ body {
 }
 
 .sidenav-container {
-  padding-top: 40px;
+  padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 13px;
@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 50px;
+  gap: 20px;
 }
 
 .sidenav-links {
