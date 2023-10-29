@@ -11,6 +11,9 @@ import { FormEditarAtendimentoComponent } from 'src/app/shared/components/form-e
 import { FormCriarAtendimentoComponent } from 'src/app/shared/components/form-criar-atendimento/form-criar-atendimento.component';
 import { FormEditarExercicioComponent } from 'src/app/shared/components/form-editar-exercicio/form-editar-exercicio.component';
 import { FormCriarExercicioComponent } from 'src/app/shared/components/form-criar-exercicio/form-criar-exercicio.component';
+import { AvaliacaoComponent } from 'src/app/shared/components/avaliacao/avaliacao/avaliacao.component';
+import { FormCriarAvaliacaoComponent } from 'src/app/shared/components/form-criar-avaliacao/form-criar-avaliacao/form-criar-avaliacao.component';
+import { FormEditarAvaliacaoComponent } from 'src/app/shared/components/form-editar-avaliacao/form-editar-avaliacao/form-editar-avaliacao.component';
 
 
 const routes: Routes = [
@@ -27,6 +30,9 @@ const routes: Routes = [
       { path: 'exercicios', component: ExerciciosComponent },
       { path: 'editar-exercicio/:id', component: FormEditarExercicioComponent},
       { path: 'criar-exercicio', component: FormCriarExercicioComponent},
+      { path: 'avaliacao', component: AvaliacaoComponent },
+      { path: 'criar-avaliacao', component: FormCriarAvaliacaoComponent },
+      { path: 'editar-avaliacao/:id', component: FormEditarAvaliacaoComponent },
       { path: 'detalhamento-aluno', component: DetalhamentoAlunoComponent},
     ]
   }

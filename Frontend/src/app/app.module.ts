@@ -11,6 +11,9 @@ import { EditComponent } from './shared/components/edit/edit.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PublicModule } from './views/public/public.module';
 import { PrivateModule } from './views/private/private.module';
+import { FormCriarAvaliacaoComponent } from './shared/components/form-criar-avaliacao/form-criar-avaliacao/form-criar-avaliacao.component';
+import { AvaliacaoComponent } from './shared/components/avaliacao/avaliacao/avaliacao.component';
+import { FormEditarAvaliacaoComponent } from './shared/components/form-editar-avaliacao/form-editar-avaliacao/form-editar-avaliacao.component';
 
 
 
@@ -18,7 +21,10 @@ import { PrivateModule } from './views/private/private.module';
   declarations: [
     AppComponent,
     EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FormCriarAvaliacaoComponent,
+    AvaliacaoComponent,
+    FormEditarAvaliacaoComponent
   ],
   imports: [
     BrowserModule,
