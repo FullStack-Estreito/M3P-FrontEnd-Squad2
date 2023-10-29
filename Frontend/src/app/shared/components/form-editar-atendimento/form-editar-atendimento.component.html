@@ -3,9 +3,14 @@
 
     <!-- Nome -->
     <div class="row">
-      <div class="col">
-        <label for="aluno_Nome">Nome Aluno</label>
-        <input type="text" class="form-control" id="aluno_Nome" formControlName="aluno_Nome">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="id_Aluno">ID Aluno</label>
+          <input type="text" class="form-control" id="id_Aluno" formControlName="id_Aluno">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-dark">EDITAR</button>
       </div>
     </div>
     <p></p>
@@ -30,10 +35,8 @@
 
       <div class="row">
         <div class="col">
-          <label for="pedagogo_Nome">Nome Pedagogo</label>
-          <input type="text" class="form-control" id="pedagogo_Nome" formControlName="pedagogo_Nome">
-          <!--           <span class="msg-erro-form text-danger" *ngIf="validarMensagemDeErro('titulo')">Por favor insira
-              titulo do acompanhamento</span> -->
+          <label for="id.Pedagogo">id Pedagogo</label>
+          <input type="text" class="form-control" id="id.Pedagogo" formControlName="id.Pedagogo">
         </div>
       </div>
     </div>
@@ -48,7 +51,6 @@
 
     <!-- Botões -->
     <div class="div-btn">
-      <button type="submit" class="btn btn-dark">EDITAR</button>
       <button type="submit" class="btn btn-dark">SALVAR</button>
       <button type="submit" class="btn btn-delete">DELETAR</button>
     </div>

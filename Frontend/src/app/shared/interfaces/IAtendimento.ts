@@ -1,7 +1,7 @@
 export interface IAtendimento {
-  id_Atendimento: number;
+  id: number;
   data: Date;
   descricao: string;
-  Id_aluno: number;
+  id_Aluno: number;
   id_Pedagogo: number;
 }
