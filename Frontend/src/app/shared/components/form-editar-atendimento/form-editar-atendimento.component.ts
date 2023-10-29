@@ -22,8 +22,6 @@ export class FormEditarAtendimentoComponent {
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
 
   }
-
-  showFormularioBuscarAluno: boolean = false;
   showFormularioEditarAtendimento: boolean = false;
 
   formularioBuscarAluno() {
