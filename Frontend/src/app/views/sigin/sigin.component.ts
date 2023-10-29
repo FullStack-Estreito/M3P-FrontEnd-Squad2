@@ -17,6 +17,7 @@ export class SiginComponent implements OnInit {
   loginUsuario: Array<ILogin> = [];
   token: any;
   registerForm!: FormGroup;
+  registerFormReset!: FormGroup;
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
     this.Buscar();
   }
@@ -39,7 +40,8 @@ export class SiginComponent implements OnInit {
     if (this.usuarios[index].senha == this.registerForm.get('senha')?.value) {
       sessionStorage.setItem('userTipo', this.usuarios[index].tipo);
       sessionStorage.setItem('userNome', this.usuarios[index].nome);
-      sessionStorage.setItem('userId', this.usuarios[index].id.toString())
+      sessionStorage.setItem('userId', this.usuarios[index].id.toString());
+      
       return true;
     }
     else {
@@ -63,12 +65,40 @@ export class SiginComponent implements OnInit {
       return
     }
     else {
-        var logado = this.verificarLogin();
+      var logado = this.verificarLogin();
       if (logado == true) {
         await this.Logar();
         this.router.navigate([`/private/`]);
       } else {
         alert('usuário ou senha errados');
+      }
+    }
+  }
+
+  verificarSenha(): boolean {
+    var teste = false;
+    for (let i = 0; i < this.usuarios.length; i++) {
+      if (this.usuarios[i].email == this.registerFormReset.get('email')?.value) {
+        teste = true;
+      }
+    }
+    return teste;
+  }
+
+
+  GreatReset() {
+    this.submitted = true;
+    if (this.registerFormReset.invalid) {
+      return
+    }
+    else {
+      if (this.verificarSenha() == true) {
+        this.frontService.reset(this.registerFormReset.value).subscribe(res => {
+          console.log(res);
+        })
+        alert("Senha atualizada! Anota num papel da próxima vez");
+        this.Buscar();
+        this.router.navigate(["/"])
       }
     }
   }
@@ -80,5 +110,15 @@ export class SiginComponent implements OnInit {
       senha: ['3333333', [Validators.required]],
       tipo: ['teste']
     });
+
+    this.registerFormReset = this.formBuilder.group({
+      id: [0],
+      email: ['', [Validators.required]],
+      senha: ['', [Validators.required]],
+    });
+
   }
+
+
+
 }

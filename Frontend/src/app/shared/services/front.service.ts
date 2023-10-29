@@ -4,13 +4,15 @@ import { Observable, lastValueFrom } from 'rxjs';
 import { IEndereco } from '../interfaces/IEndereco';
 import { IUsuario } from '../interfaces/IUsuario';
 import { ILogin } from '../interfaces/ILogin';
+import { ILog } from '../interfaces/ILog';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FrontService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private formBuilder: FormBuilder) {
   }
   idDelete = 0;
   atvBotao = false;
@@ -70,4 +72,24 @@ export class FrontService {
   addLog(usuario: any, t: any, endpoint: string): Observable<typeof t> {
     return this.http.post<typeof t>(`${this.apiBackBase}/${endpoint}`, usuario)
   }
+
+  reset(usuario: any): Observable<IUsuario> {
+    return this.http.patch<IUsuario>(`${this.apiBackBase}/resetar`, usuario)
+  }
+
+  formLog!: FormGroup;
+  logs!: ILog;
+  
+  SalvarLog(acao: string, detalhes: string) {
+    this.formLog = this.formBuilder.group({
+      id: [0],
+      acao: [acao],
+      data: [Date],
+      nome: [sessionStorage.getItem('userNome')],
+      usuario_Id: [sessionStorage.getItem('userId')],
+      detalhes: [detalhes]
+    });
+
+  }
+
 }

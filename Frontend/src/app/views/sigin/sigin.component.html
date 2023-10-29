@@ -23,17 +23,6 @@
         />
         <label for="floatingInputValue">Senha</label>
       </div>
-<!--
-      <div class="col-md">
-        <div class="form-floating">
-          <label class="label-select" for="floatingInputValue">Tipo</label>
-          <select class="form-select" formControlName="tipo">
-            <option value="administrador">administrador</option>
-            <option value="pedagogo">pedagogo</option>
-            <option value="professor">professor</option>
-          </select>
-        </div>
-      </div> -->
     </form>
     <button class="btn btn-success w-100" (click)="OnSubmit()">Entrar</button>
 
@@ -45,11 +34,9 @@
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Cadastrar conta
-      </button>
+      Esqueci minha Senha
+    </button>
 
-      <!-- Botão resetar senha -->
-      <button type="button" class="btn btn-link">Esqueci minha senha</button>
     </div>
   </div>
 </div>
@@ -74,7 +61,32 @@
       </div>
 
       <div class="modal-body">
-        Para criar uma conta entre um contato com o administrador
+        <form [formGroup]="registerFormReset" class="form">
+          <div class="form-floating">
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              id="floatingInputValue"
+            />
+            <label for="floatingInputValue">Email</label>
+          </div>
+
+          <div class="form-floating">
+            <input
+              type="text"
+              formControlName="senha"
+              class="form-control"
+              id="floatingInputValue"
+              placeholder="senha"
+            />
+            <label for="floatingInputValue">Senha</label>
+          </div>
+        </form>
+
+          <button (click)="GreatReset()" type="button"  class="btn btn-link">
+          Salvar Senha
+        </button>
       </div>
     </div>
   </div>

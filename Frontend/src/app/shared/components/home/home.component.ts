@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
     this.Buscar();
+    frontService.SalvarLog("logou", sessionStorage.getItem('userTipo')!)
+
   }
   ngOnInit(): void {
   }
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
+
   Detalhes(id: number, idEnd: number) {
     this.frontService.idDetail = id;
     this.frontService.idDetailEnd = idEnd;

@@ -10,5 +10,5 @@ export class ToolbarComponent {
   constructor() {
   }
 
-  nome =  sessionStorage.getItem('user');
+  nome =  sessionStorage.getItem('userNome');
 }

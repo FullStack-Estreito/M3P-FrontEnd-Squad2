@@ -90,10 +90,10 @@ export class FormCriarUsuarioComponent {
     } else {
       this.frontService.del(this.frontService.idDetail).subscribe(user => {
         this.usuarios.push(user);
-        console.log("deletado " + user);
+        this.Buscar();
       });
       alert("deletado");
-      this.Buscar();
+      this.router.navigate(['/private/home']);
     }
   }
 
@@ -128,32 +128,6 @@ export class FormCriarUsuarioComponent {
   get cepGet() {
     return this.registerForm.get('Endereco.cep')
   }
-
-  // this.registerForm = this.formBuilder.group({
-  //   id: [0],
-  //   nome: [''],
-  //   email: ['12345@gmail.com'],
-  //   cpf: [''],
-  //   telefone: ['', [Validators.required]],
-  //   genero: [''],
-  //   tipo: [''],
-  //   status_sistema: [true],
-  //   senha: ["12345676"],
-  //   matricula_Aluno: ["12345"],
-  //   codigo_Registro_Professor: [1],
-  //   empresa_Id: [1],
-  //   Endereco: this.formBuilder.group({
-  //     id: [0],
-  //     cep: ['', [Validators.required]],
-  //     localidade: ['', [Validators.required]],
-  //     logradouro: ['', [Validators.required]],
-  //     bairro: [''],
-  //     uf: [''],
-  //     numero: [''],
-  //     complemento: ['']
-  //   })
-  // });
-
 
 
   EditarUsuario() {
