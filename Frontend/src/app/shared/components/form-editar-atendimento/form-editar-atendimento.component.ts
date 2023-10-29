@@ -1,144 +1,92 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IEndereco } from 'src/app/shared/interfaces/IEndereco';
 import { IUsuario } from 'src/app/shared/interfaces/IUsuario';
 import { FrontService } from 'src/app/shared/services/front.service';
+import { IAtendimento } from '../../interfaces/IAtendimento';
+import { serviceAtendimento } from 'src/app/shared/services/serviceAtendimento';
 
 @Component({
   selector: 'app-form-editar-atendimento',
   templateUrl: './form-editar-atendimento.component.html',
   styleUrls: ['./form-editar-atendimento.component.css']
 })
-export class FormEditarAtendimentoComponent {
-  @Input() usuarioData: IUsuario | null = null;
+export class FormEditarAtendimentoComponent implements OnInit {
 
-  enderecos: Array<IEndereco> = [];
-  submitted = false;
-  disBotao = this.frontService.atvBotao;
-  registerForm!: FormGroup;
-  usuarios: Array<IUsuario> = [];
-  endId = 0;
+  modoEdicao = false;
+  atendimentoEdicao?: IAtendimento;
+  atendimentoData: IAtendimento [] = [];
+  editarAtendimentoForm: FormGroup;
+  serviceAtedimento: any;
+  route: any;
+  serviceAtendimento: any;
+
+
   constructor(private formBuilder: FormBuilder, private frontService: FrontService, private router: Router) {
+  this.editarAtendimentoForm = new FormGroup({
+    'id': new FormGroup('',[Validators.required]),
+    'descricao': new FormControl('', [Validators.required]),
+    'data': new FormControl('', [Validators.required]),
+    'id_Aluno': new FormControl('', [Validators.required]),
+    'id_Pedagogo': new FormControl('', [Validators.required]),
+  });
+}
 
-  }
-
-  showFormularioBuscarAluno: boolean = false;
-  showFormularioEditarAtendimento: boolean = false;
-
-  formularioBuscarAluno() {
-    this.showFormularioBuscarAluno = !this.showFormularioBuscarAluno;
-    if (this.showFormularioEditarAtendimento === true) {
-      this.showFormularioEditarAtendimento = false;
+// Validador personalizado para permitir que o campo "finalizado" seja opcional
+private requiredTrueOrNull(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const value = control.value;
+    if (value === true || value === false || value === null) {
+      return null; // Válido quando for true, false ou null (opcional)
     }
+    return { 'required': { value } }; // Inválido quando diferente de true, false ou null
+  };
+}
+
+async ngOnInit() {
+  this.atendimentoEdicao = await this.serviceAtendimento.obterAtendimentoPorId();
+  this._preencherCamposFormularioEdicao();
+}
+
+private _preencherCamposFormularioEdicao() {
+  this.editarAtendimentoForm.get('id')?.setValue(this.atendimentoEdicao?.id);
+  this.editarAtendimentoForm.get('id_Aluno')?.setValue(this.atendimentoEdicao?.id_Aluno);
+  this.editarAtendimentoForm.get('descricao')?.setValue(this.atendimentoEdicao?.descricao);
+  this.editarAtendimentoForm.get('data')?.setValue(this.atendimentoEdicao?.data);
+  this.editarAtendimentoForm.get('id_Pedagogo')?.setValue(this.atendimentoEdicao?.id_Pedagogo);
+}
+
+async onSubmit() {
+  const atendimento: IAtendimento = {
+    id: this.editarAtendimentoForm.get('id')?.value,
+    id_Aluno: this.editarAtendimentoForm.get('id_Aluno')?.value,
+    descricao: this.editarAtendimentoForm.get('descricao')?.value,
+    data: this.editarAtendimentoForm.get('data')?.value,
+    id_Pedagogo: this.editarAtendimentoForm.get('id_Pedagogo')?.value,
+  };
+
+// if (this.modoEdicao) {
+//    atendimento.id = this.atendimentoEdicao?.id;
+//    await this.serviceAtendimento.editar(atendimento);
+//  }
+//  else {
+//    await this.serviceAtendimento.cadastrar(atendimento);
+//  }
+//  this.router.navigate(['/privado/pedagogicos']);/
+//}
+  if (this.modoEdicao) {
+    const atendimento = {
+      id: this.atendimentoEdicao ? this.atendimentoEdicao.id : null,
+      // Outras propriedades do objeto atendimento
+    };
+    await this.serviceAtendimento.editar(atendimento);
+  } else {
+    await this.serviceAtendimento.cadastrar(atendimento);
   }
+  this.router.navigate(['/privado/pedagogicos']);
 
-  formularioEditarAtendimento() {
-    this.showFormularioEditarAtendimento = !this.showFormularioEditarAtendimento;
-    if (this.showFormularioBuscarAluno === true) {
-      this.showFormularioBuscarAluno = false;
-    }
+//  validarMensagemDeErro(field: string) {
+//    return this.editarAtendimentoForm.get(field)?.invalid && this.editarAtendimentoForm.get(field)?.touched;
   }
-
-  BuscarEnderecos() {
-    this.frontService.getAll("ListarEndereco", this.enderecos).subscribe(user => {
-      this.enderecos = user;
-      console.log(this.frontService.id_Endereco);
-      console.log(user.length);
-      for (let i = 0; i < this.enderecos.length; i++) {
-        if (this.enderecos[i].id > this.endId) {
-          this.endId = this.enderecos[i].id;
-        }
-      }
-    });
-  }
-
-  Buscar() {
-    this.frontService.getAll("ListarUsuarios", this.usuarios).subscribe(user => {
-      this.usuarios = user;
-      console.log(user);
-    })
-  }
-
-
-  salvar() {
-    this.frontService.add(this.registerForm.value, this.usuarios, "CriarUsuario").subscribe((user => {
-      this.usuarios.push(user);
-      this.Buscar();
-    }));
-  }
-  editar() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else
-      this.frontService.edit(this.registerForm.value, this.frontService.idDelete).subscribe(user => {
-        this.usuarios.push(user);
-      });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/']);
-  }
-
-  excluir() {
-    this.frontService.del(this.frontService.idDelete).subscribe(user => {
-      this.usuarios.push(user);
-      alert("deletado");
-      this.Buscar();
-    });
-  }
-
-  OnSubmit() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else {
-      this.salvar();
-      this.router.navigate(['/'])
-    }
-  }
-
-  EditarUsuario() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    } else
-      this.frontService.edit(this.registerForm.value, this.frontService.idDetail).subscribe(user => {
-        this.frontService.usuarios.push(user);
-      });
-    this.frontService.boolEditar = false;
-    this.router.navigate(['/home']);
-  }
-
-  ngOnInit(): void {
-    this.BuscarEnderecos();
-    this.registerForm = this.formBuilder.group({
-      id: [0],
-      nome: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
-      telefone: ["2222222211"],
-      genero: ["male"],
-      tipo: ["admin"],
-      status_sistema: [true],
-      senha: ["12345676"],
-      matricula_Aluno: ["12345"],
-      codigo_Registro_Professor: [1],
-      endereco_Id: [this.registerForm.get('idEnd')?.value],
-      empresa_Id: [1],
-
-      idEnd: [0],
-      cep: [''],
-      localidade: [''],
-      logradouro: [''],
-      bairro: [''],
-      uf: [''],
-      numero: [''],
-      complemento: ['']
-    });
-  }
-
-  get idEnd() {
-    return this.registerForm.get('idEnd')!
-  }
-
 }

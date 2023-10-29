@@ -5,17 +5,7 @@
     <img src="../../../../assets/atendimentos/atendimentos.svg" alt="Ícone atendimentos">
   </h1>
 
-
-  <div class="container-button">
-    <!-- Botão de editar usuário -->
-    <button id="button-editer" class="btn btn-secondary" (click)="formularioEditarAtendimento()" type="button">
-      Editar um atendimento
-    </button>
-  </div>
-
-  <!-- Formulários -->
-  <ng-container *ngIf="showFormularioEditarAtendimento">
-    <app-form-editar-atendimento></app-form-editar-atendimento>
-  </ng-container>
-
-</div>
+<!--Formulários -->
+<ng-container>
+  <app-form-editar-atendimento></app-form-editar-atendimento>
+</ng-container>
