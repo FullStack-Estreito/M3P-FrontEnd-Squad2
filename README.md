@@ -1,7 +1,7 @@
 # M3P-FrontEnd-Squad2
 LabSchool Manager - Gestão de Atendimentos Escolares
 
- - Escopo do Projeto
+ - Escopo do Projeto 
 A LABSchool Edu, empresa líder no segmento tecnológico de gestão educacional, foi
 selecionada em edital e recebeu um aporte financeiro para aprimorar seu principal produto,
 o LABSchool Manager. A expectativa é desenvolver um novo sistema no formato white-label,
